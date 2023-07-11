@@ -38,3 +38,18 @@ exports.addNews = (req,res) =>{
 
 }
 
+exports.fetchOne = (req,res) =>{
+    News.findById(req.params.id)
+        .then(news => res.json(news))
+        .catch(err => res.status(400).json(err))
+}
+
+exports.deleteNews = (req, res) => {
+    var author = req.body.author
+    var id = req.body.id
+    var title = req.body.title
+
+    News.deleteOne({id: id, author: author, title: title})
+        .then(()=> res.json('Deleted a news article'))
+        .catch(err => res.status(400).json(err))
+}
