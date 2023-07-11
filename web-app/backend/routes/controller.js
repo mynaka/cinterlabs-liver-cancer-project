@@ -44,12 +44,24 @@ exports.fetchOne = (req,res) =>{
         .catch(err => res.status(400).json(err))
 }
 
-exports.deleteNews = (req, res) => {
-    var author = req.body.author
-    var id = req.body.id
-    var title = req.body.title
-
-    News.deleteOne({id: id, author: author, title: title})
+exports.deleteNews = (req, res) => {    
+    News.findByIdAndDelete(req.params.id)
         .then(()=> res.json('Deleted a news article'))
+        .catch(err => res.status(400).json(err))
+}
+
+exports.updateNews = (req,res) => {
+    News.findById(req.params.id)
+        .then(news => {
+            news.author = req.body.author
+            news.title = req.body.title
+            news.content = req.body.content
+            news.tags = req.body.tags
+
+            news.save()
+                .then(()=> res.json('News Article updated'))
+                .catch(err => res.status(400).json(err))
+        })
+
         .catch(err => res.status(400).json(err))
 }
