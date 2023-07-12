@@ -5,8 +5,8 @@ router = APIRouter(
     tags = ['Sign Up']
 )
 
-# /signup/
-@router.get('/')
+# /signup
+@router.get('')
 async def init():
     data = {
         "text": "Welcome"

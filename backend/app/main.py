@@ -1,18 +1,14 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
+
 import sys
 sys.path.append(r'./app')
-
-import routers.login as loginPage
-import routers.signup as signupPage
+from routers._routing import setRoutes
 
 app = FastAPI()
-app.include_router(loginPage.router)
-app.include_router(signupPage.router)
+setRoutes(app)
 
-
+#set /home as default route
 @app.get("/")
 async def home():
-    data = {
-        "text": "hi"
-    }
-    return {"data": data["text"]+" user"}
+    return RedirectResponse("/home")
