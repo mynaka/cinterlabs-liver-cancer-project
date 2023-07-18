@@ -6,6 +6,7 @@ const newsSchema = new mongoose.Schema({
     date_add:{type: String, required: true},
     content: {type: String, required: true},
     tags: {type: Array, "default": [], required: true},
+    photo: {type: String}
 
 },{timestamps: true})
 
