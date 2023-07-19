@@ -40,7 +40,7 @@ app.get("/", (req,res)=>{
 
 //models and router
 require("./models/news_model")
-require("./models/user_model")
+require("./models/users_model")
 require("./routes/router") (app)
 require("./passport")
 require("./routes/auth")
