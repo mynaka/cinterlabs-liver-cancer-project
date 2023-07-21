@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const News =  require('../models/news_model')
+const User = require('../models/users_model')
 
 exports.getNews = (req, res) => {
     News.find()
@@ -65,3 +66,47 @@ exports.updateNews = (req,res) => {
 
         .catch(err => res.status(400).json(err))
 }
+
+
+
+//users functions
+
+exports.login = (req,res) => {
+
+}
+
+
+exports.signup = (req,res) => {
+
+    var fname = req.body.fname      
+    var lname = req.body.lname
+    var mname = req.body.mname
+    var bday = req.body.bday
+    var username = req.body.username
+    var email = req.body.email
+    var password = req.body.password
+
+    //required fields
+    //note: password validation is done in react
+    if(!fname || !lname || !email || !username || !password){
+        return res.send({error: "Missing required fields"})
+    }
+
+    const user = new User({
+        fname : fname  ,    
+        lname : lname,
+        mname : mname,
+        bday : bday,
+        username :username,
+        email : email,
+        password : password
+    })
+
+    console.log(user)
+
+    user.save()
+        .then(()=> res.json('Successfully added user!'))
+        .catch(err => res.status(400).json(err))
+
+}
+
