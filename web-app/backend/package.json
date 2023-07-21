@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "client": "npm run start --prefix client",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run client\" \"npm run server\""
   },
   "author": "Yanna Hilario",
   "license": "ISC",
@@ -18,4 +22,5 @@
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0"
   }
+  
 }
