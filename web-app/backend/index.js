@@ -35,15 +35,15 @@ conn.once('open', ()=>{
 
 //landing page
 app.get("/", (req,res)=>{
-    res.send("Welcome to the web app")
+    res.send("Sugma")
 })
 
 //models and router
 require("./models/news_model")
 require("./models/users_model")
 require("./routes/router") (app)
-require("./passport")
-require("./routes/auth")
+require("./passport") (app)
+require("./auth") (app)
 
 app.listen(port, (err) =>{
     if (err){console.log(err)}
