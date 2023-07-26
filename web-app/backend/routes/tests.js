@@ -1,21 +1,30 @@
-//testing API endpoint
+/*testing API endpoint 
+POST only
+GET methods can be directly tested on browser
+
+*/
 
 const needle = require("needle")
 
 //add news
-needle.post("http://localhost:3000/news/add", 
-{author: "Delete",
-title : "Me later",
-content: "shes better known for the things that she does",
-date_add : "June 13, 2023",
-tags : ["Music, Revenge"]},
-(err, res) => {
-    console.log(res.body)
-}
-)
+// needle.post("http://localhost:3000/news/add", 
+// {author: "Delete",
+// title : "Me later",
+// content: "shes better known for the things that she does",
+// date_add : "June 13, 2023",
+// tags : ["Music, Revenge"]},
+// (err, res) => {
+//     console.log(res.body)
+// }
+// )
 
 
 //update news
+
+/*caveat: frontend must be able to fetch details first so what is 
+returned to the server is complete 
+
+*/
 // needle.post("http://localhost:3000/news/update/64c0ad21345b08bf3ff28176", 
 // {author: "UPDATED NA",
 // title : "Me later hehe",
@@ -34,7 +43,51 @@ tags : ["Music, Revenge"]},
 // }
 // )
 
+
+
+
+
 //add user
 // needle.post("http://localhost:3000/signup/success",{
-//     fname: "Test User"
-// })
+//     fname: "Katyr",
+//     lname: "Perry",
+//     mname: "M",
+//     username: "kittycat",
+//     email: "katyPerry@gmail.com",
+//     password: "totga123!",
+    
+// }, (err,res)=>{console.log(res.body)})
+
+
+//update profile
+
+/*caveat: email must be included in the req body
+email cannot be changed once account is created
+*/
+// needle.post("http://localhost:3000/user/edit/profile/CannonEvent", 
+// {fname: "ANDREW",
+// lname: "SANTOS",
+// mname: "Burgos",
+// username: "YasKween",
+// email: "cannonev@gmail.com"} ,
+// (err, res) => {
+//     console.log(res.body)
+// }
+// )
+
+//update password
+
+/*Note: frontend must validate new password twice*/
+// needle.post("http://localhost:3000/user/edit/password/YasKween", 
+// {newpass: "picturetoburn",
+// email: "cannonev@gmail.com"} ,
+// (err, res) => {
+//     console.log(res.body)
+// }
+// )
+
+
+//delete user
+needle.post("http://localhost:3000/user/delete/katyPerry@gmail.com",
+{}, (err,res) => {console.log(res.body)})
+

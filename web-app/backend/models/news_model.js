@@ -16,7 +16,8 @@ newsSchema.statics.duplicateTitle = async function(title){
     if(!title) throw new Error ("Invalid value for title")
     try{
         const news = await this.findOne({title})
-        if (news) return true
+        if (news)
+        return true
     }catch(err){
         console.log("Error in duplicateTitle", err.messsage)
         return

@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
     fname: {type: String, required: true},
     lname: {type: String, required: true},
     mname: {type: String, required: false},
-    bday: {type: Date, required: true},
+    bday: {type: Date},             //change to required later
     username: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
@@ -12,15 +12,15 @@ const UserSchema = new mongoose.Schema({
 
 //data validation
 UserSchema.statics.duplicateUser = async function(val){
-    if(!val) throw new Error("Invalid value")
-
     try{
-        const user = await this.findOne({val})
-        if(user) return true
+        const user = await this.findOne(val)
+        if(user) 
+        return true
     }catch(err){
-        console.log("Error in duplicateEmail", err.message)
+        console.log("Error in duplicateUser", err.message)
         return
     }
 }
+
 
 module.exports = mongoose.model("User", UserSchema)
