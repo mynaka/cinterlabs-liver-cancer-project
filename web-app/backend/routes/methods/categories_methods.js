@@ -37,3 +37,16 @@ exports.addCategory = (req,res) =>{
         .then(()=> res.json('Successfully added category!'))
         .catch(err => res.status(400).json(err))
 }
+
+exports.updateCateg = (req,res) => {
+    Categ.findById(req.params.id)
+        .then(categ => {
+            categ.title = req.body.title
+
+            categ.save()
+                .then(()=> res.json('Category Title updated'))
+                .catch(err => res.status(400).json(err))
+        })
+
+        .catch(err => res.status(400).json(err))
+}
