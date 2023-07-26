@@ -10,4 +10,17 @@ const UserSchema = new mongoose.Schema({
     password: {type: String, required: true},
 })
 
+//data validation
+UserSchema.statics.duplicateUser = async function(val){
+    if(!val) throw new Error("Invalid value")
+
+    try{
+        const user = await this.findOne({val})
+        if(user) return true
+    }catch(err){
+        console.log("Error in duplicateEmail", err.message)
+        return
+    }
+}
+
 module.exports = mongoose.model("User", UserSchema)

@@ -8,7 +8,7 @@ exports.getNews = (req, res) => {
         .catch(err => res.status(400).json(err)) 
 }
 
-exports.addNews = (req,res) =>{
+exports.addNews = async (req,res) =>{
     var author = req.body.author
     var title = req.body.title
     var date_add = req.body.date_add
@@ -20,6 +20,9 @@ exports.addNews = (req,res) =>{
         console.log(req.body)
         return res.send({success: false})
     }else{
+
+        const duplicateNews = await News.duplicateTitle(title)
+        if(duplicateNews) return res.json({success: false, message: "Duplicate title found"})
         const news = new News({
             author: author,
             title: title,

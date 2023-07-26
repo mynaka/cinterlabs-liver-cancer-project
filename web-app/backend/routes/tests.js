@@ -3,16 +3,16 @@
 const needle = require("needle")
 
 //add news
-// needle.post("http://localhost:3000/news/add", 
-// {author: "Delete",
-// title : "Me later",
-// content: "shes better known for the things that she does",
-// date_add : "June 13, 2023",
-// tags : ["Music, Revenge"]},
-// (err, res) => {
-//     console.log(res.body)
-// }
-// )
+needle.post("http://localhost:3000/news/add", 
+{author: "Delete",
+title : "Me later",
+content: "shes better known for the things that she does",
+date_add : "June 13, 2023",
+tags : ["Music, Revenge"]},
+(err, res) => {
+    console.log(res.body)
+}
+)
 
 
 //update news
@@ -35,6 +35,6 @@ const needle = require("needle")
 // )
 
 //add user
-needle.post("http://localhost:3000/signup/success",{
-    fname: "Test User"
-})
+// needle.post("http://localhost:3000/signup/success",{
+//     fname: "Test User"
+// })

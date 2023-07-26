@@ -20,7 +20,7 @@ exports.deleteUser = (req, res) => {
         .catch(err => res.status(400).json(err))
 }
 
-exports.signup = (req,res) => {
+exports.signup = async (req,res) => {
 
     var fname = req.body.fname      
     var lname = req.body.lname
@@ -35,6 +35,12 @@ exports.signup = (req,res) => {
     if(!fname || !lname || !email || !username || !password){
         return res.send({error: "Missing required fields"})
     }
+
+    const duplicateEmail = await Users.duplicateUser(email)
+    const duplicateUsername = await Users.duplicateUser(username)
+
+    if(duplicateEmail) return res.json({success: false, message: "Duplicate Email"})
+    if(duplicateUsername) return res.json({success: false, message: "Duplicate Username"})
 
     const user = new User({
         fname : fname  ,    

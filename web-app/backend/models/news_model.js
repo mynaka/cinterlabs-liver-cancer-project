@@ -10,4 +10,17 @@ const newsSchema = new mongoose.Schema({
 
 },{timestamps: true})
 
+
+//check for duplicates
+newsSchema.statics.duplicateTitle = async function(title){
+    if(!title) throw new Error ("Invalid value for title")
+    try{
+        const news = await this.findOne({title})
+        if (news) return true
+    }catch(err){
+        console.log("Error in duplicateTitle", err.messsage)
+        return
+    }
+}
+
 module.exports = mongoose.model("News", newsSchema)
