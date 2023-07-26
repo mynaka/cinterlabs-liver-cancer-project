@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
+const News =  require('../../models/news_model')
 
-const News =  require('../models/news_model')
 
 exports.getNews = (req, res) => {
     News.find()
