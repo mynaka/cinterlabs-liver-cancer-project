@@ -35,12 +35,19 @@ conn.once('open', ()=>{
 
 //landing page
 app.get("/", (req,res)=>{
-    res.send("Sugma")
+    res.send("Welcome to the web app")
 })
 
-//models and router
+//models
 require("./models/news_model")
 require("./models/users_model")
+require("./models/contributors_model")
+require("./models/data_dictionary/categories_model")
+require("./models/data_dictionary/subcategory_model")
+
+
+
+//routers and authentication
 require("./routes/router") (app)
 require("./passport") (app)
 require("./auth") (app)
