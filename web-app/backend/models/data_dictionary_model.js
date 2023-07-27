@@ -1,11 +1,20 @@
 const mongoose = require('mongoose')
 
+const propertySchema = new mongoose.Schema({
+    category: {type: String},
+    subcategory: {type:String},
+    property: {type: String},
+    type: {type: String},
+    required: {type: String},
+    description: {type: String}
+})
+
 
 const subcategorySchema = new mongoose.Schema({
     category: {type: String},
     title : {type: String, required: true},
-    description: {type:String}
-    //properties: [{type}]
+    description: {type:String},
+    properties: [{type: propertySchema}]
 
 })
 
@@ -14,7 +23,6 @@ const categorySchema = new mongoose.Schema({
     title: {type: String, required:true},
     subcategory : [{type: subcategorySchema}]
 })
-
 
 
 
@@ -47,6 +55,7 @@ subcategorySchema.statics.duplicateSubCateg = async function({title:title, categ
 
 const Categories = mongoose.model("Categories", categorySchema)
 const SubCategories = mongoose.model("SubCategories", subcategorySchema)
+const Properties = mongoose.model("Properties", propertySchema)
 
 module.exports = {Categories, SubCategories}
 
