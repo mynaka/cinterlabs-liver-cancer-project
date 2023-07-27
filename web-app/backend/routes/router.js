@@ -21,5 +21,9 @@ module.exports = (app) =>{
     app.post("/categories/delete/:title", categ_controller.deleteCategory)
     app.post("/categories/add", categ_controller.addCategory)
     app.post("/categories/edit/:title", categ_controller.updateCateg)
-    app.post("/categories/subcategory/add", subcateg_controller.addSubCategory)
+    app.post("/:categ/subcategory/add", subcateg_controller.addSubCategory)
+    app.get("/:categ/subcategories", subcateg_controller.getSubCateg)
+    app.get("/:categ/:subcateg", subcateg_controller.fetchOne)
+    app.post("/:categ/:subcateg/delete", subcateg_controller.deleteSubCategory)
+    app.post("/:categ/:subcateg/edit", subcateg_controller.updateSubCateg)
 }

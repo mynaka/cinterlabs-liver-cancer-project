@@ -96,25 +96,36 @@ email cannot be changed once account is created
 
 //add category
 // needle.post("http://localhost:3000/categories/add",
-// {title: "Sample",},
+// {title: "Delete",},
 // (err,res)=> {console.log(res.body)})
 
 //delete category
-// needle.post("http://localhost:3000/categories/delete/Clinically",
-// {title: "Clinical"},
+// needle.post("http://localhost:3000/categories/delete/Delete",
+// {},
 // (err,res)=> {console.log(res.body)})
 
 
 //update category
-// needle.post("http://localhost:3000/categories/edit/Clinical",
-// {title: "Clinically"},
+// needle.post("http://localhost:3000/categories/edit/Clinically",
+// {title: "Clinical"},
 // (err,res)=> {console.log(res.body)})
 
 
 //subcategories
-needle.post("http://localhost:3000/categories/subcategory/add",
-{categ:"64c217e8636d2d5135fc1236",
-title: "Hello World",
-desc: "This is a sample category"},
-(err,res)=> {console.log(res.body)})
 
+//add new subcategory
+// needle.post("http://localhost:3000/Administrative/subcategory/add",
+// {title: "Update",
+// desc: "This is a sample category"},
+// (err,res)=> {console.log(res.body)})
+
+
+//delete subcategory
+// needle.post("http://localhost:3000/Administrative/Test/delete",
+// {},
+// (err,res)=> {console.log(res.body)})
+
+//update subcategory
+needle.post("http://localhost:3000/Administrative/Update/edit",
+{title: "Updated Title"},
+(err,res)=> {console.log(res.body)})

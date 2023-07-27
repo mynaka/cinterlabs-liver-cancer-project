@@ -33,7 +33,7 @@ exports.addCategory = async (req,res) =>{
     const duplicateTitle = await Categories.duplicateCateg({title:title})
     if(duplicateTitle) return res.json({success: false, message: "Category already exists"})
    
-    const categ = new Category ({
+    const categ = new Categories ({
         title :title, 
         subcategory : subcategory
     })

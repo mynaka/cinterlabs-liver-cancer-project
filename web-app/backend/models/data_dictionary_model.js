@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 
 
 const subcategorySchema = new mongoose.Schema({
+    category: {type: String},
     title : {type: String, required: true},
     description: {type:String}
     //properties: [{type}]
@@ -31,11 +32,11 @@ categorySchema.statics.duplicateCateg = async function({title:title}){
 }
 
 
-subcategorySchema.statics.duplicateSubCateg = async function({title:title}){
+subcategorySchema.statics.duplicateSubCateg = async function({title:title, category:category}){
     if (!title) throw new Error ("Invalid value for title")
 
     try{
-        const subcateg = await this.findOne({title:title})
+        const subcateg = await this.findOne({title:title, category:category})
         if (subcateg) return true
     } catch(err){
         console.log("Error in duplicateSubCateg", err.message) 
