@@ -8,38 +8,44 @@ exports.getCateg = (req, res) => {
 }
 
 exports.fetchOne = (req,res) =>{
-    Category.findById(req.params.id)
+    Category.findOne({title: req.params.title})
         .then(categ => res.json(categ))
         .catch(err => res.status(400).json(err))
 }
 
 
 exports.deleteCategory = (req, res) => {    
-    Category.findByIdAndDelete(req.params.id)
+    Category.findOneAndDelete({title: req.params.title})
         .then(()=> res.json('Removed a Category'))
         .catch(err => res.status(400).json(err))
 }
 
-exports.addCategory = (req,res) =>{
+exports.addCategory = async (req,res) =>{
     var title = req.body.title
     var subcategory = req.body.subcategory
 
     if(!title){return res.send({error: "Category has no title"})}
 
+    const duplicateTitle = await Category.duplicateCateg(title)
+    if(duplicateTitle) return res.json({success: false, message: "Category already exists"})
+   
     const categ = new Category ({
         title :title, 
         subcategory : subcategory
     })
-
-    console.log(categ)
 
     categ.save()
         .then(()=> res.json('Successfully added category!'))
         .catch(err => res.status(400).json(err))
 }
 
-exports.updateCateg = (req,res) => {
-    Categ.findById(req.params.id)
+exports.updateCateg = async (req,res) => {
+
+    const duplcicateCateg = await Category.duplicateCateg({title:req.body.title})
+    if(duplcicateCateg) return res.json({success: false, message: "Category already exists"})
+
+
+    Category.findOne({title: req.params.title})
         .then(categ => {
             categ.title = req.body.title
 

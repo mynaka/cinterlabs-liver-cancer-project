@@ -16,7 +16,8 @@ module.exports = (app) =>{
     app.post("/user/edit/password/:username",user_controller.updatePassword)
     app.post("/user/delete/:email", user_controller.deleteUser)
     app.get("/categories", categ_controller.getCateg)
-    app.get("/categories/:id", categ_controller.fetchOne)
-    app.post("/categories/delete/:id", categ_controller.deleteCategory)
+    app.get("/categories/:title", categ_controller.fetchOne)
+    app.post("/categories/delete/:title", categ_controller.deleteCategory)
     app.post("/categories/add", categ_controller.addCategory)
+    app.post("/categories/edit/:title", categ_controller.updateCateg)
 }

@@ -21,7 +21,7 @@ exports.addNews = async (req,res) =>{
         return res.send({success: false})
     }else{
 
-        const duplicateNews = await News.duplicateTitle(title)
+        const duplicateNews = await News.duplicateTitle({title:title})
         if(duplicateNews) return res.json({success: false, message: "Duplicate title found"})
         const news = new News({
             author: author,

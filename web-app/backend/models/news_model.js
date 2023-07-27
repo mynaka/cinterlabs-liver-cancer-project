@@ -15,7 +15,7 @@ const newsSchema = new mongoose.Schema({
 newsSchema.statics.duplicateTitle = async function(title){
     if(!title) throw new Error ("Invalid value for title")
     try{
-        const news = await this.findOne({title})
+        const news = await this.findOne({title: title})
         if (news)
         return true
     }catch(err){

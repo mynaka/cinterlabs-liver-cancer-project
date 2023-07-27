@@ -3,7 +3,6 @@ POST only
 GET methods can be directly tested on browser
 
 */
-
 const needle = require("needle")
 
 //add news
@@ -88,6 +87,25 @@ email cannot be changed once account is created
 
 
 //delete user
-needle.post("http://localhost:3000/user/delete/katyPerry@gmail.com",
-{}, (err,res) => {console.log(res.body)})
+// needle.post("http://localhost:3000/user/delete/katyPerry@gmail.com",
+// {}, (err,res) => {console.log(res.body)})
 
+
+
+//categories
+
+//add category
+// needle.post("http://localhost:3000/categories/add",
+// {title: "Biospecimen"},
+// (err,res)=> {console.log(res.body)})
+
+//delete category
+// needle.post("http://localhost:3000/categories/delete/Clinically",
+// {title: "Clinical"},
+// (err,res)=> {console.log(res.body)})
+
+
+//update category
+needle.post("http://localhost:3000/categories/edit/Clinical",
+{title: "Clinically"},
+(err,res)=> {console.log(res.body)})
