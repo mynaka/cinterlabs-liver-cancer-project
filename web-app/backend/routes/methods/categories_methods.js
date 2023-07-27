@@ -1,21 +1,25 @@
 const mongoose = require('mongoose')
-const Category = require('../../models/data_dictionary/categories_model')
+var { Categories, Subcategory } = require("../../models/data_dictionary_model")
 
 exports.getCateg = (req, res) => {
-    Category.find()
+    Categories.find()
         .then(categ => res.json(categ))
         .catch(err => res.status(400).json(err)) 
 }
 
 exports.fetchOne = (req,res) =>{
-    Category.findOne({title: req.params.title})
+    Categories.findOne({title: req.params.title})
         .then(categ => res.json(categ))
         .catch(err => res.status(400).json(err))
 }
 
+exports.getSubCateg = async (req,res) => {
+    let foundCateg = await Categories.find({title: req.params.title}).populate("subcategory")
+    res.json(foundCateg)
+}
 
 exports.deleteCategory = (req, res) => {    
-    Category.findOneAndDelete({title: req.params.title})
+    Categories.findOneAndDelete({title: req.params.title})
         .then(()=> res.json('Removed a Category'))
         .catch(err => res.status(400).json(err))
 }
@@ -26,7 +30,7 @@ exports.addCategory = async (req,res) =>{
 
     if(!title){return res.send({error: "Category has no title"})}
 
-    const duplicateTitle = await Category.duplicateCateg(title)
+    const duplicateTitle = await Categories.duplicateCateg({title:title})
     if(duplicateTitle) return res.json({success: false, message: "Category already exists"})
    
     const categ = new Category ({
@@ -41,11 +45,11 @@ exports.addCategory = async (req,res) =>{
 
 exports.updateCateg = async (req,res) => {
 
-    const duplcicateCateg = await Category.duplicateCateg({title:req.body.title})
+    const duplcicateCateg = await Categories.duplicateCateg({title:req.body.title})
     if(duplcicateCateg) return res.json({success: false, message: "Category already exists"})
 
 
-    Category.findOne({title: req.params.title})
+    Categories.findOne({title: req.params.title})
         .then(categ => {
             categ.title = req.body.title
 

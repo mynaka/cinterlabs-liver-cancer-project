@@ -96,7 +96,7 @@ email cannot be changed once account is created
 
 //add category
 // needle.post("http://localhost:3000/categories/add",
-// {title: "Biospecimen"},
+// {title: "Sample",},
 // (err,res)=> {console.log(res.body)})
 
 //delete category
@@ -106,6 +106,15 @@ email cannot be changed once account is created
 
 
 //update category
-needle.post("http://localhost:3000/categories/edit/Clinical",
-{title: "Clinically"},
+// needle.post("http://localhost:3000/categories/edit/Clinical",
+// {title: "Clinically"},
+// (err,res)=> {console.log(res.body)})
+
+
+//subcategories
+needle.post("http://localhost:3000/categories/subcategory/add",
+{categ:"64c217e8636d2d5135fc1236",
+title: "Hello World",
+desc: "This is a sample category"},
 (err,res)=> {console.log(res.body)})
+
