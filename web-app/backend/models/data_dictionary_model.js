@@ -5,8 +5,10 @@ const propertySchema = new mongoose.Schema({
     subcategory: {type:String},
     property: {type: String},
     type: {type: String},
-    required: {type: String},
-    description: {type: String}
+    required: {type: Boolean},
+    description: {type: String},
+    json :{type:Buffer},
+    tsv :{type:Buffer},
 })
 
 
@@ -42,6 +44,7 @@ categorySchema.statics.duplicateCateg = async function({title:title}){
 
 subcategorySchema.statics.duplicateSubCateg = async function({title:title, category:category}){
     if (!title) throw new Error ("Invalid value for title")
+    if(!category) throw new Error("Invalid value for category")
 
     try{
         const subcateg = await this.findOne({title:title, category:category})
@@ -53,9 +56,24 @@ subcategorySchema.statics.duplicateSubCateg = async function({title:title, categ
 }
 
 
+propertySchema.statics.duplicateProperty = async function({category: category, subcategory: subcategory, property : property }){
+    if (!property) throw new Error ("Invalid value for Property name")
+    if(!category) throw new Error("Invalid value for category")
+    if(!subcategory) throw new Error("Invalid value for subcategory")
+
+    try{
+        const prop = await this.findOne({category: category, subcategory: subcategory, property : property})
+        if(prop) return true
+    }catch(err){
+        console.log("Error in duplicateProperty", err.message)
+        return
+    }
+}
+
+
 const Categories = mongoose.model("Categories", categorySchema)
 const SubCategories = mongoose.model("SubCategories", subcategorySchema)
 const Properties = mongoose.model("Properties", propertySchema)
 
-module.exports = {Categories, SubCategories}
+module.exports = {Categories, SubCategories, Properties}
 

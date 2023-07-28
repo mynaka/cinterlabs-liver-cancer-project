@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-var { Categories, Subcategory } = require("../../models/data_dictionary_model")
+var { Categories, SubCategories, Properties } = require("../../models/data_dictionary_model")
 
 exports.getCateg = (req, res) => {
     Categories.find()

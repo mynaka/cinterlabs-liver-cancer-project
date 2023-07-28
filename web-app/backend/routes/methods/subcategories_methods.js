@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const {Categories, SubCategories} = require('../../models/data_dictionary_model')
-//const Category = require('../../models/data_dictionary/categories_model')
+const {Categories, SubCategories, Properties} = require('../../models/data_dictionary_model')
+
 
 
 exports.getSubCateg = (req, res) => {
@@ -15,7 +15,7 @@ exports.fetchOne = (req,res) =>{
         .catch(err => res.status(400).json(err))
 }
 
-
+//bug: delete from parent array as well
 exports.deleteSubCategory = (req, res) => {    
     SubCategories.findOneAndDelete({title: req.params.subcateg, category: req.params.categ})
         .then(()=> res.json('Removed a Subcategory'))

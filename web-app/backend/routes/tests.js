@@ -115,7 +115,7 @@ email cannot be changed once account is created
 
 //add new subcategory
 // needle.post("http://localhost:3000/Administrative/subcategory/add",
-// {title: "Update",
+// {title: "PropTest",
 // desc: "This is a sample category"},
 // (err,res)=> {console.log(res.body)})
 
@@ -126,6 +126,26 @@ email cannot be changed once account is created
 // (err,res)=> {console.log(res.body)})
 
 //update subcategory
-needle.post("http://localhost:3000/Administrative/Update/edit",
-{title: "Updated Title"},
-(err,res)=> {console.log(res.body)})
+// needle.post("http://localhost:3000/Administrative/Update/edit",
+// {title: "Updated Title"},
+// (err,res)=> {console.log(res.body)})
+
+
+//properties
+
+//add property
+// needle.post("http://localhost:3000/Administrative/PropTest/property/add",
+// {property:"delete",
+// type: "string",
+// required: true,
+// description:"No Description"},
+// (err,res) => {console.log(res.body)})
+
+
+//delete property
+// needle.post("http://localhost:3000/Administrative/PropTest/delete/delete",
+// {},
+// (err,res) => {console.log(res.body)})
+
+//update property
+

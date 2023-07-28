@@ -2,6 +2,8 @@ const news_controller = require("./methods/news_methods")
 const user_controller = require("./methods/users_methods")
 const categ_controller = require("./methods/categories_methods")
 const subcateg_controller = require("./methods/subcategories_methods")
+const property_controller = require("./methods/properties_methods")
+
 
 module.exports = (app) =>{
     app.get("/news", news_controller.getNews)
@@ -26,4 +28,8 @@ module.exports = (app) =>{
     app.get("/:categ/:subcateg", subcateg_controller.fetchOne)
     app.post("/:categ/:subcateg/delete", subcateg_controller.deleteSubCategory)
     app.post("/:categ/:subcateg/edit", subcateg_controller.updateSubCateg)
+    app.get("/:categ/:subcateg/property", property_controller.getProperty)
+    app.post("/:categ/:subcateg/property/add", property_controller.addProperty)
+    app.post("/:categ/:subcateg/:prop/delete", property_controller.deleteProperty)
+    app.post("/:categ/:subcateg/:prop/edit", property_controller.updateProperty)
 }
