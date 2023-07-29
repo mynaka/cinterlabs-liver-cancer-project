@@ -15,10 +15,14 @@ exports.fetchOne = (req,res) =>{
         .catch(err => res.status(400).json(err))
 }
 
-//bug: delete from parent array as well
-exports.deleteSubCategory = (req, res) => {    
-    SubCategories.findOneAndDelete({title: req.params.subcateg, category: req.params.categ})
-        .then(()=> res.json('Removed a Subcategory'))
+//TODO
+exports.deleteSubCategory = (req, res) => {
+    SubCategories.findOne({title: req.params.title})
+        .then((docs)=> {
+            Categories.findOneAndUpdate({ title: req.params.categ }, { $pull: { "subcategory.$[element]": docs } })
+            SubCategories.findOneAndDelete({title: req.params.subcateg, category: req.params.categ})
+            res.json('Removed a Subcategory')
+        })
         .catch(err => res.status(400).json(err))
 }
 

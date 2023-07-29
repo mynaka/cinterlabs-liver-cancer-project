@@ -10,11 +10,16 @@ exports.getProperty = (req,res) => {
 }
 
 //bug: delete from parent array as well
-exports.deleteProperty = (req,res) => {
-    Properties.findOneAndDelete({category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
-            .then(prop => res.json(prop))
-            .catch(err => res.status(400).json(err))
+exports.deleteProperty = (req, res) => {
+    Properties.findOne({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
+        .then((docs)=> {
+            SubCategories.findOneAndUpdate({ title: req.params.subcateg }, { $pull: { "subcategory.$[element]": docs } })
+            Properties.findOneAndDelete({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
+            res.json('Removed a Subcategory')
+        })
+        .catch(err => res.status(400).json(err))
 }
+
 
 //feat: create method here for inserting many
 
