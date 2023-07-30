@@ -1,0 +1,123 @@
+.cnavbar {
+    background: linear-gradient(1.5turn, rgb(255, 255, 255) , rgb(247, 247, 247) );
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: fixed;
+    font-family: 'Inter', sans-serif;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+  
+  .cnavbar-container {
+    position: fixed; top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+    max-width: 2000px;
+    list-style: none;
+    
+  }
+  
+  .clogo-image {
+    width: 500px; /* Adjust the width as needed */
+    height: auto;
+     /* Add some right margin to separate the logo from other elements */
+  }
+  
+  
+  .cnav-menu {
+    display: flex;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 5px;
+    list-style: none;
+    text-align: center;
+    width: 50vw;
+    justify-content: center;
+   margin-right: 10rem;
+  }
+  
+  .cnav-item {
+    height: 80px;
+  }
+  
+  .cnav-links {
+    color: #000000;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.25rem .5rem;
+    height: 100%;
+  }
+  
+  .cnav-links:hover {
+    border-bottom: 4px solid #FFB81D;
+    transition: all 0.2s ease-out;
+  }
+  
+  .fa-bars {
+    color: #fff;
+  }
+  
+  
+  .spacer{
+    padding: 10;
+  }
+  
+  @media screen and (max-width: 960px) {
+    .cNavbarItems {
+      position: relative;
+    }
+  
+    .cnav-menu {
+      
+      justify-content: center; /* Center the items horizontally */
+     right: 70%;
+     
+    }
+  
+    
+    .cnav-menu.active {
+      background: #242222;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+  
+    .cnav-links {
+      text-align: center;
+      padding: 0rem;
+      width: 100%;
+      display: table;
+      font-size: 1rem;
+    }
+  
+    .cnav-links:hover {
+      background-color: #fff;
+      color: #242424;
+      border-radius: 0;
+    }
+  
+    .cnavbar-logo {
+      position: static;
+      
+      left: 0;
+      bottom: 10em;
+      transform: translate(25%, 50%);
+    }
+  
+   /* Add css style for dropdown */
+  
+   
+  }
+  
