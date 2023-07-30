@@ -21,6 +21,7 @@ function HeroSection() {
           See more
         </Button>
         <Button
+          linkTo='/login'
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
