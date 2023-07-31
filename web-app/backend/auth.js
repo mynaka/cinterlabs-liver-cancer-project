@@ -1,17 +1,21 @@
 const passport = require('passport')
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = 'our-google-client-id';
-const GOOGLE_CLIENT_SECRET = 'our-google-client-secret';
 
 module.exports = (app) =>{
   passport.use(new GoogleStrategy({
-      clientID: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "http://localhost:3000/auth/google/callback"
     },
     function(accessToken, refreshToken, profile, done) {
+      if(profile._json.hd === "up.edu.ph"){
+        //TODO: allow finding or creating user in database
         userProfile=profile;
         return done(null, userProfile);
+      }else{
+        // fail        
+        done(new Error("Invalid host domain"));
+      }
     }
   ));
   
