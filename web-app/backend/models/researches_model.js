@@ -6,7 +6,8 @@ const researchSchema = new mongoose.Schema({
     date_add:{type: String, required: true, default: Date.now},
     content: {type: String, required: true},
     tags: {type: Array, "default": [], required: true},
-    photo: {type: String}
+    photo: {type: String},
+    verified: {type: Boolean, "default":false}
 })
 
 const contributorsSchema = new mongoose.Schema({
@@ -38,7 +39,7 @@ researchSchema.statics.duplcateResearch = async function({author: author, title:
     if(!title) throw new Error ("Invalid title")
 
     try{
-        const research = await this.findOne({author: author, title:title})
+        const research = await this.findOne({author: {fname: author.fname, lname: author.lname}, title:title})
         if(research) return true
     }catch(err){
         console.log("Error in duplcateResearch", err.message)
