@@ -41,9 +41,7 @@ app.get("/", (req,res)=>{
 //models
 require("./models/news_model")
 require("./models/users_model")
-require("./models/contributors_model")
-// require("./models/data_dictionary/categories_model")
-// require("./models/data_dictionary/subcategory_model")
+require("./models/researches_model")
 require("./models/data_dictionary_model")
 
 
