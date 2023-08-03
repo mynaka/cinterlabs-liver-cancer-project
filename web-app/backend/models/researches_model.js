@@ -1,5 +1,14 @@
 const mongoose = require('mongoose')
 
+const researchSchema = new mongoose.Schema({
+    author: [{type: String}],
+    title: {type: String, required: true},
+    date_add:{type: String, required: true, default: Date.now},
+    content: {type: String, required: true},
+    tags: {type: Array, "default": [], required: true},
+    photo: {type: String}
+})
+
 const contributorsSchema = new mongoose.Schema({
     fname: {type: String, required : true},
     mname: {type: String, required: true},
@@ -8,14 +17,7 @@ const contributorsSchema = new mongoose.Schema({
     contribution: [{type: researchSchema}]
 })
 
-const researchSchema = new mongoose.Schema({
-    author: [{type: contributorsSchema}],
-    title: {type: String, required: true},
-    date_add:{type: String, required: true, default: Date.now},
-    content: {type: String, required: true},
-    tags: {type: Array, "default": [], required: true},
-    photo: {type: String}
-})
+
 
 //check duplicates
 contributorsSchema.statics.duplicateContributor = async function({fname: fname, lname: lname}){
