@@ -3,7 +3,7 @@ const user_controller = require("./methods/users_methods")
 const categ_controller = require("./methods/categories_methods")
 const subcateg_controller = require("./methods/subcategories_methods")
 const property_controller = require("./methods/properties_methods")
-
+const research_controller = require("./methods/researches_methods")
 
 module.exports = (app) =>{
     app.get("/news", news_controller.getNews)
@@ -32,4 +32,10 @@ module.exports = (app) =>{
     app.post("/:categ/:subcateg/property/add", property_controller.addProperty)
     app.post("/:categ/:subcateg/:prop/delete", property_controller.deleteProperty)
     app.post("/:categ/:subcateg/:prop/edit", property_controller.updateProperty)
+    app.get("/research", research_controller.getResearches )
+    app.get("/research/:title", research_controller.fetchOne)
+    app.post("/research/add", research_controller.addReserach)
+    app.post("/research/edit", research_controller.updateResearch)
+    app.post("/research/:title/delete", research_controller.updateResearch)
+
 }

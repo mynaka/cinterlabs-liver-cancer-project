@@ -7,6 +7,18 @@ exports.getResearches = (req, res) => {
         .catch(err => res.status(400).json(err))
 }
 
-// exports.fetchOne = (req,res) =>{
-//     Research.findOne({title: req.params.title})
-// }
+exports.fetchOne = (req,res) =>{
+    Research.findOne({title: req.params.title})
+}
+
+exports.addReserach = async (req,res) =>{
+
+}
+
+exports.updateResearch = async(req,res) =>{
+
+}
+
+exports.deleteResearch = (req,res) =>{
+    
+}

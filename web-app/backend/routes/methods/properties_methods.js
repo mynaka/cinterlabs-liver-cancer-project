@@ -22,7 +22,9 @@ exports.deleteProperty = (req, res) => {
 
 
 //feat: create method here for inserting many
+// exports.addManyProp = async (req,res) =>{
 
+// } 
 
 
 exports.addProperty = async (req,res) =>{
@@ -64,7 +66,26 @@ exports.addProperty = async (req,res) =>{
 
 }
 
+
 exports.updateProperty = async (req,res) => {
-    const duplicateProp = await Properties.duplicateProperty({category: categ, subcategory: subcateg, property : prop })
+
+    var categ = req.params.categ
+    var subcateg = req.params.subcateg
+    var prop = req.params.prop
+    var newProp = req.body.title
+
+    const duplicateProp = await Properties.duplicateProperty({category: categ, subcategory: subcateg, property :newProp })
     if(duplicateProp) return res.json({success: false, message: "Property already exists"})
+
+    
+    Properties.findOne({category: categ, subcategory: subcateg, property : prop})
+        .then(prop => {
+            prop.property = newProp
+
+            prop.save()
+                .then(()=> res.json('Property Title updated'))
+                .catch(err => res.status(400).json(err))
+        })
+
+        .catch(err => res.status(400).json(err))
 }

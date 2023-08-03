@@ -6,7 +6,7 @@ GET methods can be directly tested on browser
 const needle = require("needle")
 
 //add news
-// needle.post("http://localhost:3000/news/add", 
+// needle.post("http://localhost:3001/news/add", 
 // {author: "Delete",
 // title : "Me later",
 // content: "shes better known for the things that she does",
@@ -42,7 +42,7 @@ returned to the server is complete
 // )
 
 //delete news
-// needle.post("http://localhost:3000/news/delete/64c0ad21345b08bf3ff28176", 
+// needle.post("http://localhost:3001/news/delete/64c0ad21345b08bf3ff28176", 
 // (err, res) => {
 //     console.log(res.body)
 // }
@@ -53,7 +53,7 @@ returned to the server is complete
 
 
 //add user
-// needle.post("http://localhost:3000/signup/success",{
+// needle.post("http://localhost:3001/signup/success",{
 //     fname: "Katyr",
 //     lname: "Perry",
 //     mname: "M",
@@ -69,7 +69,7 @@ returned to the server is complete
 /*caveat: email must be included in the req body
 email cannot be changed once account is created
 */
-// needle.post("http://localhost:3000/user/edit/profile/CannonEvent", 
+// needle.post("http://localhost:3001/user/edit/profile/CannonEvent", 
 // {fname: "ANDREW",
 // lname: "SANTOS",
 // mname: "Burgos",
@@ -83,7 +83,7 @@ email cannot be changed once account is created
 //update password
 
 /*Note: frontend must validate new password twice*/
-// needle.post("http://localhost:3000/user/edit/password/YasKween", 
+// needle.post("http://localhost:3001/user/edit/password/YasKween", 
 // {newpass: "picturetoburn",
 // email: "cannonev@gmail.com"} ,
 // (err, res) => {
@@ -93,7 +93,7 @@ email cannot be changed once account is created
 
 
 //delete user
-// needle.post("http://localhost:3000/user/delete/katyPerry@gmail.com",
+// needle.post("http://localhost:3001/user/delete/katyPerry@gmail.com",
 // {}, (err,res) => {console.log(res.body)})
 
 
@@ -101,18 +101,18 @@ email cannot be changed once account is created
 //categories
 
 //add category
-// needle.post("http://localhost:3000/categories/add",
+// needle.post("http://localhost:3001/categories/add",
 // {title: "Delete",},
 // (err,res)=> {console.log(res.body)})
 
 //delete category
-// needle.post("http://localhost:3000/categories/delete/Delete",
+// needle.post("http://localhost:3001/categories/delete/Delete",
 // {},
 // (err,res)=> {console.log(res.body)})
 
 
 //update category
-// needle.post("http://localhost:3000/categories/edit/Clinically",
+// needle.post("http://localhost:3001/categories/edit/Clinically",
 // {title: "Clinical"},
 // (err,res)=> {console.log(res.body)})
 
@@ -120,19 +120,19 @@ email cannot be changed once account is created
 //subcategories
 
 //add new subcategory
-// needle.post("http://localhost:3000/Administrative/subcategory/add",
+// needle.post("http://localhost:3001/Administrative/subcategory/add",
 // {title: "PropTest",
 // desc: "This is a sample category"},
 // (err,res)=> {console.log(res.body)})
 
 
 //delete subcategory
-// needle.post("http://localhost:3000/Administrative/Test/delete",
+// needle.post("http://localhost:3001/Administrative/Test/delete",
 // {},
 // (err,res)=> {console.log(res.body)})
 
 //update subcategory
-// needle.post("http://localhost:3000/Administrative/Update/edit",
+// needle.post("http://localhost:3001/Administrative/Update/edit",
 // {title: "Updated Title"},
 // (err,res)=> {console.log(res.body)})
 
@@ -140,7 +140,7 @@ email cannot be changed once account is created
 //properties
 
 //add property
-// needle.post("http://localhost:3000/Administrative/PropTest/property/add",
+//needle.post("http://localhost:3001/Clinical/Another one/property/add",
 // {property:"delete",
 // type: "string",
 // required: true,
@@ -149,9 +149,11 @@ email cannot be changed once account is created
 
 
 //delete property
-// needle.post("http://localhost:3000/Administrative/PropTest/delete/delete",
+// needle.post("http://localhost:3001/Administrative/PropTest/delete/delete",
 // {},
 // (err,res) => {console.log(res.body)})
 
 //update property
-
+// needle.post("http://localhost:3001/Clinical/Another one/delete/edit",
+// {title: "Updated Title"},
+// (err,res) => {console.log(res.body)})
