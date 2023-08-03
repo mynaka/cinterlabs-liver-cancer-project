@@ -1,0 +1,33 @@
+/* About.css */
+
+.about-container {
+    
+    color: #ffffff;
+    padding: 20px;
+    display: flex; /* Use flexbox to create a horizontal layout */
+    align-items: center; /* Align the image and content vertically */
+    margin-top: 50px;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .image-container {
+    flex: 1; /* Take one-third of the available width for the image */
+    order: 2; /* Change the order to 2 to move the image to the right */
+    display: flex; /* Use flexbox to flip the image horizontally */
+    justify-content: flex-end; /* Flip the image to the right */
+  }
+  
+  .oble {
+    max-width: 100%;
+    display: block; /* Ensure the image doesn't add extra space below */
+    transform: scaleX(-1); /* Flip the image horizontally */
+  }
+  
+  .about-content {
+    flex: 2; /* Take two-thirds of the available width for the content */
+    padding-right: 20px; /* Add some space between the image and content */
+    order: 1; /* Change the order to 1 to move the content to the left */
+    margin-left: 50px;
+  }
+  

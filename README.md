@@ -1,2 +1,20 @@
-# cinterlabs-liver-cancer-project
-Spin off project for Liver Cancer project - web / mobile applications
+Init project
+cd web-app
+npm install
+
+To run backend server:
+cd backend
+npm install
+nodemon index
+
+
+To run frontend:
+cd frontend
+npm install
+
+cd liver-cancer-app
+npm install
+npm fund
+
+npm start
+
