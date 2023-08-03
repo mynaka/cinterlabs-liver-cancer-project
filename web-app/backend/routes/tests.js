@@ -17,6 +17,12 @@ const needle = require("needle")
 // }
 // )
 
+//get news
+
+// needle.get("http://localhost:3001/news",{},
+// (err,res)=>{
+//     console.log(res.body)
+// })
 
 //update news
 
@@ -24,7 +30,7 @@ const needle = require("needle")
 returned to the server is complete 
 
 */
-// needle.post("http://localhost:3000/news/update/64c0ad21345b08bf3ff28176", 
+// needle.post("http://localhost:3001/news/update/64c0ad21345b08bf3ff28176", 
 // {author: "UPDATED NA",
 // title : "Me later hehe",
 // content: "shes better known for the things that she does",

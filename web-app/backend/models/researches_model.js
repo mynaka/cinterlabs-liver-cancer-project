@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const researchSchema = new mongoose.Schema({
-    author: [{type: String}],
+    author: [{fname: String, mname:String, lname:String }],
     title: {type: String, required: true},
     date_add:{type: String, required: true, default: Date.now},
     content: {type: String, required: true},
@@ -20,6 +20,7 @@ const contributorsSchema = new mongoose.Schema({
 
 
 //check duplicates
+
 contributorsSchema.statics.duplicateContributor = async function({fname: fname, lname: lname}){
     if(!fname || !lname) throw new Error ("Invalid name")
 
