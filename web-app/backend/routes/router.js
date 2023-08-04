@@ -34,10 +34,11 @@ module.exports = (app) =>{
     app.post("/:categ/:subcateg/:prop/delete", property_controller.deleteProperty)
     app.post("/:categ/:subcateg/:prop/edit", property_controller.updateProperty)
     app.get("/research", research_controller.getResearches )
-    app.get("/research/pending", research_controller.getResearches )
-    app.get("/research/:title", research_controller.fetchOne)
+    app.get("/pending", research_controller.pendingResearches)
+    app.get("/:title", research_controller.fetchOne)
     app.post("/research/submit", research_controller.addReserach)
-    app.post("/research/edit", research_controller.updateResearch)
-    app.post("/research/:title/delete", research_controller.updateResearch)
+    //app.post("/research/edit", research_controller.updateResearch)
+    app.post("/:title/delete", research_controller.deleteResearch)
+    app.post("/research/:title/verify", research_controller.verifyResearch)
 
 }

@@ -35,11 +35,11 @@ contributorsSchema.statics.duplicateContributor = async function({fname: fname, 
 }
 
 
-researchSchema.statics.duplcateResearch = async function({author: author, title: title}){
+researchSchema.statics.duplicateResearch = async function({title: title}){
     if(!title) throw new Error ("Invalid title")
 
     try{
-        const research = await this.findOne({author: {fname: author.fname, lname: author.lname}, title:title})
+        const research = await this.findOne({title:title})
         if(research) return true
     }catch(err){
         console.log("Error in duplcateResearch", err.message)

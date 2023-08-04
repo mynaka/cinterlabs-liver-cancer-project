@@ -9,7 +9,7 @@ exports.getProperty = (req,res) => {
                 .catch(err => res.status(400).json(err))
 }
 
-//bug: delete from parent array as well
+
 exports.deleteProperty = (req, res) => {
     var categ = req.params.categ
     var subcateg = req.params.subcateg

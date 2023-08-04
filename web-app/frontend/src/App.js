@@ -10,6 +10,7 @@ import Login from './components/pages/Login';
 import News from './components/pages/News';
 import CancerHome from './components/pages/CancerHome';
 import CancerHomeNavbar from './components/CancerHomeNavbar';
+import AboutLiver from './components/pages/AboutLiver';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path = "/login" element ={<Login />} />
           <Route path='/contribute' element={<Contribute />} />
           <Route path='/cancerhome' element={<CancerHome />} />
+          <Route path='/aboutliver' element={<AboutLiver />} />
           
         </Routes>
       </>

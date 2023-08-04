@@ -10,7 +10,7 @@ exports.getResearches = (req, res) => {
 
 
 exports.pendingResearches = (req,res) => {
-    Research.find({verified: false})
+    Research.find({verified : {$ne: true}})
     .then(research => res.json(research))
     .catch(err => res.status(400).json(err))
 }
@@ -31,8 +31,8 @@ exports.addReserach = async (req,res) =>{
 
     if(!title || !content){return res.send({error: "Invalid entry"})}
 
-    const duplicateResearch = await Research.duplicateResearch({author: author,title:title})
-    if (duplicateResearch) return res.json({success:false,message: "Duplicate Research found"})
+    const duplicateResearch = await Research.duplicateResearch({title:title})
+    if (duplicateResearch) return res.json({success:false,message: "Duplicate Research title found"})
 
     const research = new Research ({
         author: author,
@@ -42,14 +42,66 @@ exports.addReserach = async (req,res) =>{
     })
 
     //check if contributor exists
-    Contributors.findOne({})
+    Contributors.findOneAndUpdate({author: {fname: author.fname, lname: author.lname}})
+        .then(contrib => {
+            if (!contrib){       //contributor does not exist
+                const contributor = new Contributors({
+                   fname : author.fname,
+                   mname : author.mname,
+                   lname : author.lname  
+                })
+
+                contributor.save()
+                .then(()=> res.json('Added a Contributor'))
+                .catch(err => res.status(400).json(err))
+
+                contributor.contribution.push(research)
+
+            }else{
+                contrib.contribution.push(research)
+
+                contrib.save()
+                    .then(()=> res.json('Added Research'))
+                    .catch(err => res.status(400).json(err))
+            }
+
+            research.save()
+            .then()
+            .catch(err => res.status(400).json(err))
+        })
+
+        .catch(err => res.status(400).json(err))
+
     
 }
 
-exports.updateResearch = async(req,res) =>{
+// exports.updateResearch = async(req,res) =>{
 
-}
+// }
 
 exports.deleteResearch = (req,res) =>{
+    
+    var author = req.body.author
+    console.log(author.fname,author.lname,author.mname)
+    Research.findOne({ title: req.params.title})
+    .then((research)=> {
+        Contributors.findOneAndUpdate({fname: author.fname, lname: author.lname, mname: author.mname}, { $pull: { "contribution.$[element]": research } })
+        Research.findOneAndDelete({ title: req.params.title })
+        res.json('Research Deleted')
+    })
+    .catch(err => res.status(400).json(err))
+}
 
+exports.verifyResearch = (req,res) =>{
+    Research.findOne({title:req.params.title, verified: false})
+        .then(research =>{
+            research.verified = true
+
+            research.save()
+                .then(() => res.json('Research verified'))
+                .catch(err => res.status(400).json(err))
+
+        })
+
+        .catch(err => res.status(400).json(err))
 }
