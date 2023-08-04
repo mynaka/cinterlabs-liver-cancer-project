@@ -157,3 +157,34 @@ email cannot be changed once account is created
 // needle.post("http://localhost:3001/Clinical/Another one/delete/edit",
 // {title: "Updated Title"},
 // (err,res) => {console.log(res.body)})
+
+
+//researches
+
+//add research
+// needle.post("http://localhost:3001/research/submit",
+// {author: {
+//     fname: "Yanna",
+//     mname: "D.",
+//     lname:"Hilario"
+// },
+// title: "MinMax Theory",
+// content: "Lorem Ipsum....",
+// tags: ["Songs", "Sample"]},
+// (err,res)=> {console.log(res.body)})
+
+//verify research
+// needle.post("http://localhost:3001/research/Toupdate/verify",
+// {}, (err,res) => {console.log(res.body)})
+
+//update research
+
+
+
+//delete research
+needle.post("http://localhost:3001/Toupdate/delete",
+{author: {
+   fname: "Yanna",
+   mname: "D.",
+   lname: "Hilario" 
+}}, (err,res) => {console.log(res.body)})

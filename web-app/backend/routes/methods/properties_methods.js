@@ -9,7 +9,7 @@ exports.getProperty = (req,res) => {
                 .catch(err => res.status(400).json(err))
 }
 
-//bug: delete from parent array as well
+
 exports.deleteProperty = (req, res) => {
     Properties.findOne({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
         .then((docs)=> {
@@ -21,10 +21,15 @@ exports.deleteProperty = (req, res) => {
 }
 
 
-//feat: create method here for inserting many
-// exports.addManyProp = async (req,res) =>{
+exports.addManyProp = async (req,res) =>{
+    var categ = req.params.categ
+    var subcateg = req.params.subcateg
+    var props = req.body.property
 
-// } 
+    if(!categ || !subcateg) {return res.send({error: "Invalid input"})}
+
+    
+} 
 
 
 exports.addProperty = async (req,res) =>{
