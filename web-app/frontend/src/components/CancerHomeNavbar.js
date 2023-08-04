@@ -25,7 +25,7 @@ function CancerHomeNavbar({ closeMobileMenu }) {
             </Link>
           </li>
           <li className='cnav-item'>
-            <Link to='/' className='cnav-links' onClick={closeMobileMenu}>
+            <Link to='/cancerhome' className='cnav-links' onClick={closeMobileMenu}>
 Home
             </Link>
           </li>
