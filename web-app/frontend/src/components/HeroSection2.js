@@ -1,36 +1,33 @@
-import React from 'react';
-import '../App.css';
-import { Button } from './Button';
-import './HeroSection.css';
+import React, { useState } from 'react';
+import './HeroSection2.css';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of useHistory
 
-function HeroSection2() {
+const HeroSection2 = () => {
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
+  const [showAbout, setShowAbout] = useState(false);
+
+  const handleReadMoreClick = () => {
+    setShowAbout(true); // Set showAbout to true to display the AboutPage
+    navigate('/aboutliver'); // Use navigate function to redirect to the About page
+  };
   return (
-    <div className='hero-container'>
-      {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
-      <div className='spacer'></div>
-      <h2>Another Hero Section</h2>
-      <hr></hr>
-      <p className='shortdesc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nibh massa, scelerisque et elementum eu, malesuada eget dui. Proin malesuada congue massa, id rutrum diam. Mauris egestas neque eu aliquam ultricies. Etiam blandit dui ante, sit amet luctus nisl pretium a. Proin rutrum risus iaculis tristique fermentum. Proin non auctor sapien. In volutpat elit vitae semper consequat. Quisque dictum mauris magna, eget pellentesque ex varius quis. Phasellus vitae vulputate eros.</p>
-      <div className='hero-btns'>
-        <Button
-          linkTo='/services'
-          className='btns'
-          buttonStyle='btn--outline'
-          buttonSize='btn--large'
-        >
-          View Services
-        </Button>
-        <Button
-          linkTo='/contact'
-          className='btns'
-          buttonStyle='btn--primary'
-          buttonSize='btn--large'
-        >
-          Contact Us <i className='far fa-envelope' />
-        </Button>
+    <div className="hero-section2">
+      <div className="hero-content2">
+        <div className="hero-left2">
+          <img src='images2/LiverArt.png' alt="Liver Art" className="hero-image-liver2" />
+        </div>
+        <div className="hero-right2">
+          <h3 className='cinterlabs'> UPLB CINTERLABS's</h3>
+          <h2 className="hero-title2">LIVER CANCER</h2>
+          <h2 className="hero-title2-1">RESEARCH PROJECT</h2>
+          <p className="hero-subtitle2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis urna leo, vel pharetra nisi hendrerit sit amet. Sed at convallis velit, vitae cursus orci. Phasellus ac lorem interdum, egestas orci quis, pulvinar erat. Quisque imperdiet risus non turpis ullamcorper congue. Praesent sit amet rhoncus nulla. Donec eget placerat neque. Sed ante dui, porttitor in molestie id, fringilla vitae odio. Nunc tortor nulla, porttitor a luctus ut, interdum id mauris. </p>
+          
+          <button className="hero-cta-button2" onClick={handleReadMoreClick}>Read More</button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
 
 export default HeroSection2;
