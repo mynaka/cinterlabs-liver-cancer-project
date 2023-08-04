@@ -64,6 +64,32 @@ exports.addProperty = async (req,res) =>{
 
 }
 
+/**
+ * CREATE method here for inserting many
+ * @param {{categ: String, subcateg: String, prop: propertySchema[]}} req
+ * @param {*} res
+ */
+exports.addPropertyMany = async (req,res) =>{
+    var categ = req.params.categ
+    var subcateg = req.params.subcateg
+    var props = req.body.property
+
+    SubCategories.findOne({category: categ, title: subcateg})
+    .then(subcateg => {
+        subcateg.properties.push(props)
+
+        subcateg.save()
+            .then(()=> res.json('Added Properties'))
+            .catch(err => res.status(400).json(err))
+
+        property.save()
+        .then()
+        .catch(err => res.status(400).json(err))
+    })
+
+    .catch(err => res.status(400).json(err))
+} 
+
 exports.updateProperty = async (req,res) => {
 
     var categ = req.params.categ
