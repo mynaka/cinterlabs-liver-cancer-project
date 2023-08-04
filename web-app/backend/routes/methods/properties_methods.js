@@ -15,7 +15,7 @@ exports.deleteProperty = (req, res) => {
         .then((docs)=> {
             SubCategories.findOneAndUpdate({ title: req.params.subcateg }, { $pull: { "subcategory.$[element]": docs } })
             Properties.findOneAndDelete({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
-            res.json('Removed a Subcategory')
+            res.json('Removed a Property')
         })
         .catch(err => res.status(400).json(err))
 }

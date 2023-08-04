@@ -37,7 +37,7 @@ module.exports = (app) =>{
     app.get("/pending", research_controller.pendingResearches)
     app.get("/:title", research_controller.fetchOne)
     app.post("/research/submit", research_controller.addReserach)
-    //app.post("/research/edit", research_controller.updateResearch)
+    app.post("/:title/edit", research_controller.updateResearch)
     app.post("/:title/delete", research_controller.deleteResearch)
     app.post("/research/:title/verify", research_controller.verifyResearch)
 

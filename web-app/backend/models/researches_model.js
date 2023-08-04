@@ -22,11 +22,11 @@ const contributorsSchema = new mongoose.Schema({
 
 //check duplicates
 
-contributorsSchema.statics.duplicateContributor = async function({fname: fname, lname: lname}){
+contributorsSchema.statics.duplicateContributor = async function({fname: fname, lname: lname, mname: mname}){
     if(!fname || !lname) throw new Error ("Invalid name")
 
     try{
-        const contributor = await this.findOne({fname:fname, lname: lname})
+        const contributor = await this.findOne({fname:fname, lname: lname, mname: mname})
         if (contributor) return true
     }catch(err){
         console.log("Error in duplicateContributor", err.message)

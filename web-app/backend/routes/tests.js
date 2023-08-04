@@ -140,8 +140,8 @@ email cannot be changed once account is created
 //properties
 
 //add property
-//needle.post("http://localhost:3001/Clinical/Another one/property/add",
-// {property:"delete",
+// needle.post("http://localhost:3001/Clinical/Another one/property/add",
+// {property:"todel",
 // type: "string",
 // required: true,
 // description:"No Description"},
@@ -149,9 +149,9 @@ email cannot be changed once account is created
 
 
 //delete property
-// needle.post("http://localhost:3001/Administrative/PropTest/delete/delete",
-// {},
-// (err,res) => {console.log(res.body)})
+needle.post("http://localhost:3001/Clinical/Another one/hele/delete",
+{},
+(err,res) => {console.log(res.body)})
 
 //update property
 // needle.post("http://localhost:3001/Clinical/Another one/delete/edit",
@@ -182,9 +182,9 @@ email cannot be changed once account is created
 
 
 //delete research
-needle.post("http://localhost:3001/Toupdate/delete",
-{author: {
-   fname: "Yanna",
-   mname: "D.",
-   lname: "Hilario" 
-}}, (err,res) => {console.log(res.body)})
+// needle.post("http://localhost:3001/Toupdate/delete",
+// {author: {
+//    fname: "Yanna",
+//    mname: "D.",
+//    lname: "Hilario" 
+// }}, (err,res) => {console.log(res.body)})

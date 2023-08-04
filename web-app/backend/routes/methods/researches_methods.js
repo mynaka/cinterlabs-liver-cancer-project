@@ -75,18 +75,48 @@ exports.addReserach = async (req,res) =>{
     
 }
 
-// exports.updateResearch = async(req,res) =>{
+
+exports.updateResearch = async(req,res) =>{
+    var newTitle = req.body.newTitle
+    var title = req.params.title
+    var tags = req.body.tags
+    var content = req.body.content
+
+    if(!title) {return res.send({error: "Invalid title"})}
+
+    const duplicateResearch = await Research.duplicateResearch({title:title})
+    if (duplicateResearch) return res.json({success:false,message: "Duplicate Research title found"})
+
+    Research.findOne({title: title})
+        .then(research => {
+            research.title = newTitle,
+            research.tags = tags,           //should be able to push/pull from array
+            research.content = content
+
+            research.save()
+                    .then(() => res.json('Research updated'))
+                    .catch(err=>res.status(400).json (err))
+        })
+
+        .catch(err=>res.status(400).json (err))
+
+}
+
+// exports.editAuthors = async (req,res) => {
+//     var title = req.params.title
+//     var author = req.body.author
 
 // }
 
+//bug fix: remove from array of contributions
 exports.deleteResearch = (req,res) =>{
     
     var author = req.body.author
     console.log(author.fname,author.lname,author.mname)
     Research.findOne({ title: req.params.title})
     .then((research)=> {
-        Contributors.findOneAndUpdate({fname: author.fname, lname: author.lname, mname: author.mname}, { $pull: { "contribution.$[element]": research } })
-        Research.findOneAndDelete({ title: req.params.title })
+        Contributors.findOneAndUpdate({fname: author.fname, lname: author.lname, mname: author.mname})
+        //Research.findOneAndDelete({ title: req.params.title })
         res.json('Research Deleted')
     })
     .catch(err => res.status(400).json(err))
