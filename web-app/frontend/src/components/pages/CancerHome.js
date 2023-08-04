@@ -9,7 +9,7 @@ import CancerHomeNavbar from '../CancerHomeNavbar';
 function CancerHome() {
   return (
     <div>
-      {/* <CancerHomeNavbar/> */}
+      <CancerHomeNavbar/>
     <div className='home-container'>
     <img
           src={process.env.PUBLIC_URL + '/images2/PHYSCI-2.webp'} // Replace 'your-image.jpg' with the actual image filename and extension

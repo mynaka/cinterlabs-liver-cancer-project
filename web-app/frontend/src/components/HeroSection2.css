@@ -1,0 +1,86 @@
+/* HeroSection2.css */
+
+.hero-section2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px; /* Set an appropriate height for the hero section */
+  background-color: #f2f2f2; /* Change the background color as needed */
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-content2 {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-left2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-liver2 {
+  width: 500px;
+  height: auto;
+  margin-right: 90px;
+}
+
+.hero-right2 {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Align children vertically */
+  justify-content: center; /* Center content vertically */
+}
+
+.hero-title2,
+.hero-title2-1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #000000; /* Change the title color as needed */
+  margin: 0;
+}
+
+.cinterlabs {
+  font-weight: lighter;
+  font-size: 25px;
+  margin: 0;
+}
+
+.hero-subtitle2 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+  position: relative; /* Add relative positioning to the paragraph */
+}
+
+.hero-subtitle2::before {
+  content: "";
+  position: absolute;
+  left: -20px; /* Adjust the distance of the line from the left side */
+  top: 50%; /* Position the line in the middle of the paragraph */
+  transform: translateY(-50%); /* Center the line vertically */
+  height: 40%; /* Set the height of the line */
+  width: 3px;
+  background-color: #8e1537; /* Change the color of the line as needed */
+}
+.hero-cta-button2 {
+  padding: 10px 10px; /* Adjust the padding to make the button shorter */
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8e1537; /* Change the button background color as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end; /* Align the button to the right */
+  margin-top: 10px;
+  width: fit-content; /* Set the width based on content */
+}
+
+.hero-cta-button2:hover {
+  background-color: #770425; /* Change the button hover background color as needed */
+}

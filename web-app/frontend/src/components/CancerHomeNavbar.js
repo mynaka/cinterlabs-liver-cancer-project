@@ -21,7 +21,12 @@ function CancerHomeNavbar({ closeMobileMenu }) {
         <ul className={click ? 'cnav-menu active' : 'cnav-menu'}>
           <li className='cnav-item'>
             <Link to='/' className='cnav-links' onClick={closeMobileMenu}>
-              Home
+              CINTERLABS
+            </Link>
+          </li>
+          <li className='cnav-item'>
+            <Link to='/cancerhome' className='cnav-links' onClick={closeMobileMenu}>
+Home
             </Link>
           </li>
           <li className='cnav-item'>
