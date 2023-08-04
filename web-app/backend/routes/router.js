@@ -30,6 +30,7 @@ module.exports = (app) =>{
     app.post("/:categ/:subcateg/edit", subcateg_controller.updateSubCateg)
     app.get("/:categ/:subcateg/property", property_controller.getProperty)
     app.post("/:categ/:subcateg/property/add", property_controller.addProperty)
+    app.post("/:categ/:subcateg/property/addMany", property_controller.addPropertyMany)
     app.post("/:categ/:subcateg/:prop/delete", property_controller.deleteProperty)
     app.post("/:categ/:subcateg/:prop/edit", property_controller.updateProperty)
     app.get("/research", research_controller.getResearches )
