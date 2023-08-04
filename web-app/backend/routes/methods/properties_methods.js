@@ -11,26 +11,19 @@ exports.getProperty = (req,res) => {
 
 
 exports.deleteProperty = (req, res) => {
-    Properties.findOne({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
+    var categ = req.params.categ
+    var subcateg = req.params.subcateg
+    var prop = req.body.prop
+
+    Properties.findOne({ category: categ, subcategory: subcateg, property: prop })
         .then((docs)=> {
-            SubCategories.findOneAndUpdate({ title: req.params.subcateg }, { $pull: { "subcategory.$[element]": docs } })
-            Properties.findOneAndDelete({ category: req.params.categ, subcategory: req.params.subcateg, property: req.params.prop })
+
+            SubCategories.findOneAndUpdate({ category: categ, title: subcateg }, { $pull: { properties: { $eq: docs } } })
+            Properties.deleteOne(docs)
             res.json('Removed a Subcategory')
         })
         .catch(err => res.status(400).json(err))
 }
-
-
-exports.addManyProp = async (req,res) =>{
-    var categ = req.params.categ
-    var subcateg = req.params.subcateg
-    var props = req.body.property
-
-    if(!categ || !subcateg) {return res.send({error: "Invalid input"})}
-
-    
-} 
-
 
 exports.addProperty = async (req,res) =>{
     var categ = req.params.categ
@@ -71,6 +64,31 @@ exports.addProperty = async (req,res) =>{
 
 }
 
+/**
+ * CREATE method here for inserting many
+ * @param {{categ: String, subcateg: String, prop: propertySchema[]}} req
+ * @param {*} res
+ */
+exports.addPropertyMany = async (req,res) =>{
+    var categ = req.params.categ
+    var subcateg = req.params.subcateg
+    var props = req.body.property
+
+    SubCategories.findOne({category: categ, title: subcateg})
+    .then(subcateg => {
+        subcateg.properties.push(props)
+
+        subcateg.save()
+            .then(()=> res.json('Added Properties'))
+            .catch(err => res.status(400).json(err))
+
+        property.save()
+        .then()
+        .catch(err => res.status(400).json(err))
+    })
+
+    .catch(err => res.status(400).json(err))
+} 
 
 exports.updateProperty = async (req,res) => {
 
