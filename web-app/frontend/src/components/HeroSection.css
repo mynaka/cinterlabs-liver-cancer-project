@@ -5,7 +5,9 @@
   position: fixed;
   z-index: -1;
 } */
-
+.space{
+  height: 80px;
+}
 .hero-container {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ),url('images/img-home.jpg') center center/cover no-repeat;
   height: 100vh;
@@ -39,10 +41,14 @@
 
 h2{
   color: #FFB81D;
-  font-size: 40px;
+  font-size: 30px;
   font-family: 'Inter', sans-serif;
-  font-weight: 900;
+  font-weight: 800;
+  text-align: center;
 }
+
+
+
 
 hr{
   width: 50%;

@@ -31,9 +31,13 @@ export default function News() {
         {newsData.map((newsData,index) =>(
           <NewsCards
             key ={index}
+            id ={newsData._id}
+            photo={newsData.photo}
             title={newsData.title}
             tags={newsData.tags}
-            author={newsData.author}/>
+            author={newsData.author}
+            content={newsData.content}
+            date={newsData.date_add}/>
         ))}
        
         </div>

@@ -81,3 +81,19 @@ ul.tag{
 li.tags{
     float:left;
 }
+
+.headSpace{
+    height: 150px;
+}
+.newsArticle{
+    color:white;
+   
+}
+
+.articleImg{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,11 +1,17 @@
 import React from 'react'
 import './NewsCards.css'
+import {useNavigate} from 'react-router-dom';
 
 export default function NewsCards(props){
+    const navigate = useNavigate();
+
+    const redirect = () => {
+      navigate('/news/article',{state:{props:props}})  
+    }
     return(
-        <div className='newsList' onClick={() => alert("Redirecting to news article")}>
+        <div className='newsList' onClick={()=>redirect()}>
             <div key ={props.index} className='newsCard'>
-                <img src = 'images2/news_stock.jpg' alt='news-img' className='newsImg'></img>
+                <img src = {props.photo} alt='news-img' className='newsImg'></img>
 
                 <div className='newsCardContent'>
                     <h3 className='newsTitle'>{props.title}</h3>

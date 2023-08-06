@@ -8,7 +8,9 @@ function HeroSection() {
     <div className='hero-container'>
       {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
       <div className='spacer'></div>
-      <h2>The Computational Interdisciplinary Research Labs (CINTERLABS)</h2>
+      <div>
+      <h2>The Computational Interdisciplinary Research Labs<br />(CINTERLABS)</h2>
+      </div>
       <hr></hr>
       <p className='shortdesc'>Computational Interdisciplinary Research Laboratories (CINTERLabs) is UPLB's arm in strengthening research in computational arts, data science, automation and robotics for the enhancement and application of agriculture and environmental monitoring. Armed with the goal for excellence and research advancement, our institution helps ensure that our research capacity is able to compete with other Asian universities. </p>  {/*ref : https://ovcre.uplb.edu.ph/press/features/item/537-what-s-with-all-of-these-centers*/}
       <div className='hero-btns'>

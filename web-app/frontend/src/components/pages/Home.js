@@ -8,6 +8,7 @@ import './Home.css'; // Import the Home.css file
 function Home() {
   return (
     <div className='home-container'>
+       <div className='space'></div>
       <HeroSection />
       <Cards />
       <Footer />

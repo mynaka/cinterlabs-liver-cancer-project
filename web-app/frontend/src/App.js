@@ -11,6 +11,7 @@ import News from './components/pages/News';
 import CancerHome from './components/pages/CancerHome';
 import CancerHomeNavbar from './components/CancerHomeNavbar';
 import AboutLiver from './components/pages/AboutLiver';
+import { NewsArticle } from './components/pages/NewsArticle';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/news' element={<News />} />
+          <Route path='/news/article' element={<NewsArticle />} />
           <Route path='/about' element={<About />} />
           <Route exact path = "/login" element ={<Login />} />
           <Route path='/contribute' element={<Contribute />} />
