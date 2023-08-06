@@ -1,10 +1,14 @@
 import React from 'react';
 import Footer from '../Footer';
+import Navbar from '../Navbar'
 import './styles/About.css'; // Import the CSS file for About page styles
 
 function About() {
   return (
     <>
+    <div>
+      <Navbar />
+      <div className='spacer'></div>
       <div className='about-container'>
         <div className='image-container'>
           <img src='images2/oble.png' alt='oblationart' className='oble' />
@@ -29,6 +33,8 @@ Interdum et malesuada fames ac ante ipsum primis in faucibus. Orci varius natoqu
       <div className='footer'>
         <Footer />
       </div>
+    </div>
+      
     </>
   );
 }

@@ -3,7 +3,7 @@ import '../../App.css';
 import Footer from '../Footer';
 import NewsCards from './NewsCards';
 import './styles/NewsCards.css'
-
+import Navbar from '../Navbar'
 
 export default function News() {
 
@@ -24,6 +24,7 @@ export default function News() {
 
     return (
       <div >
+        <Navbar />
         <div className='spacer'>
                 &nbsp;
         </div>

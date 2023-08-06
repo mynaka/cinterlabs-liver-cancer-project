@@ -3,6 +3,7 @@ import '../../App.css';
 import Footer from '../Footer';
 import './styles/NewsCards.css'
 import { useLocation } from 'react-router-dom';
+import Navbar from '../Navbar';
 
 export const NewsArticle = () => {
 
@@ -10,6 +11,7 @@ export const NewsArticle = () => {
     const route = "/";
   return (
     <div>
+        <Navbar />
         <div className='headSpace'></div>
         <div className='newsArticle'>
             <div className='articleImg'>
