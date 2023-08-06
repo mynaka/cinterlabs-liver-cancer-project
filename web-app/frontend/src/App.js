@@ -9,9 +9,9 @@ import About from './components/pages/About';
 import Login from './components/pages/Login';
 import News from './components/pages/News';
 import CancerHome from './components/pages/CancerHome';
-import CancerHomeNavbar from './components/CancerHomeNavbar';
 import AboutLiver from './components/pages/AboutLiver';
 import { NewsArticle } from './components/pages/NewsArticle';
+import Data from './components/pages/Data';
 
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
           <Route path='/contribute' element={<Contribute />} />
           <Route path='/cancerhome' element={<CancerHome />} />
           <Route path='/aboutliver' element={<AboutLiver />} />
+          <Route path='/dataportal' element={<Data />}/>
           
         </Routes>
       </>

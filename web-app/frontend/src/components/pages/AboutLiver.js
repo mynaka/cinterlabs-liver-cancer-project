@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../Footer';
-import './About.css'; //
+import './styles/About.css'; //
 import CancerHomeNavbar from '../CancerHomeNavbar';
 
 function AboutLiver() {

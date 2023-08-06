@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../App.css';
 import Footer from '../Footer';
-import './NewsCards.css'
+import './styles/NewsCards.css'
 import { useLocation } from 'react-router-dom';
 
 export const NewsArticle = () => {

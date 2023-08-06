@@ -2,7 +2,7 @@ import React, {useEffect, useState}  from 'react';
 import '../../App.css';
 import Footer from '../Footer';
 import NewsCards from './NewsCards';
-import './NewsCards.css'
+import './styles/NewsCards.css'
 
 
 export default function News() {

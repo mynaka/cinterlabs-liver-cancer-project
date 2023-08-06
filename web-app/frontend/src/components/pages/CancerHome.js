@@ -3,7 +3,7 @@ import '../../App.css';
 import Cards from '../Cards';
 import HeroSection2 from '../HeroSection2';
 import Footer from '../Footer';
-import './CancerHome.css'; // Import the Home.css file
+import './styles/CancerHome.css'; // Import the Home.css file
 import CancerHomeNavbar from '../CancerHomeNavbar';
 
 function CancerHome() {

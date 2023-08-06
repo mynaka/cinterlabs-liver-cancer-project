@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from '../Footer';
-import './About.css'; // Import the CSS file for About page styles
+import './styles/About.css'; // Import the CSS file for About page styles
 
 function About() {
   return (

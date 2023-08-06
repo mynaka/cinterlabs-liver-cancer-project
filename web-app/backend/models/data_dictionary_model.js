@@ -6,9 +6,8 @@ const propertySchema = new mongoose.Schema({
     property: {type: String},
     type: {type: String},
     required: {type: Boolean},
-    description: {type: String},
-    json :{type:Buffer},
-    tsv :{type:Buffer},
+    description: {type: String, default: "No Description"},
+   
 })
 
 
@@ -16,7 +15,9 @@ const subcategorySchema = new mongoose.Schema({
     category: {type: String},
     title : {type: String, required: true},
     description: {type:String},
-    properties: [{type: propertySchema}]
+    properties: [{type: propertySchema}],
+    json :{type:Buffer},
+    tsv :{type:Buffer},
 
 })
 

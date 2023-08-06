@@ -1,5 +1,5 @@
 import React from 'react'
-import './NewsCards.css'
+import './styles/NewsCards.css'
 import {useNavigate} from 'react-router-dom';
 
 export default function NewsCards(props){
