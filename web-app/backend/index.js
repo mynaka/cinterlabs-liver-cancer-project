@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001
 
 //middleware
 app.use(cors({
-    origin: "http://localhost:5173",                //change later to client sever
+    origin: "http://localhost:3000",                //change later to client sever
     methods:"GET, POST,PUT,DELETE",
     credentials: true
 }))

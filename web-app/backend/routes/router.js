@@ -4,6 +4,8 @@ const categ_controller = require("./methods/categories_methods")
 const subcateg_controller = require("./methods/subcategories_methods")
 const property_controller = require("./methods/properties_methods")
 const research_controller = require("./methods/researches_methods")
+const contributor_controller = require("./methods/contributors_methods")
+
 
 module.exports = (app) =>{
     app.get("/news", news_controller.getNews)
@@ -40,5 +42,5 @@ module.exports = (app) =>{
     app.post("/:title/edit", research_controller.updateResearch)
     app.post("/:title/delete", research_controller.deleteResearch)
     app.post("/research/:title/verify", research_controller.verifyResearch)
-
+    //app.get("",contributor_controller.getContributors)
 }

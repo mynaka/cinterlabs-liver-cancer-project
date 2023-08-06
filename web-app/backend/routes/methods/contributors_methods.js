@@ -33,7 +33,7 @@ exports.editContrib = async (req, res) => {
     if (duplicateContributor) {return res.json({success: false, message: "Duplicate contributor detected"})}
 
 
-    Properties.findOne({fname: req.params.fname, lname: req.params.lname})
+    Contributors.findOne({fname: req.params.fname, lname: req.params.lname})
                 .then(contrib => {
                     contrib.fname = fname,
                     contrib.lname = lname,

@@ -10,7 +10,7 @@ function HeroSection() {
       <div className='spacer'></div>
       <h2>The Computational Interdisciplinary Research Labs (CINTERLABS)</h2>
       <hr></hr>
-      <p className='shortdesc'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nibh massa, scelerisque et elementum eu, malesuada eget dui. Proin malesuada congue massa, id rutrum diam. Mauris egestas neque eu aliquam ultricies. Etiam blandit dui ante, sit amet luctus nisl pretium a. Proin rutrum risus iaculis tristique fermentum. Proin non auctor sapien. In volutpat elit vitae semper consequat. Quisque dictum mauris magna, eget pellentesque ex varius quis. Phasellus vitae vulputate eros.</p>
+      <p className='shortdesc'>Computational Interdisciplinary Research Laboratories (CINTERLabs) is UPLB's arm in strengthening research in computational arts, data science, automation and robotics for the enhancement and application of agriculture and environmental monitoring. Armed with the goal for excellence and research advancement, our institution helps ensure that our research capacity is able to compete with other Asian universities. </p>  {/*ref : https://ovcre.uplb.edu.ph/press/features/item/537-what-s-with-all-of-these-centers*/}
       <div className='hero-btns'>
         <Button
         linkTo='/about'

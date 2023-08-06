@@ -4,7 +4,7 @@ const News =  require('../../models/news_model')
 
 exports.getNews = (req, res) => {
     News.find()
-        .then(news => res.json(news))
+        .then(news => {res.json(news)})
         .catch(err => res.status(400).json(err)) 
 }
 
