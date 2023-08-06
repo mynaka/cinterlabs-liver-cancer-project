@@ -28,8 +28,8 @@ function App() {
           <Route path='/contribute' element={<Contribute />} />
           <Route path='/cancerhome' element={<CancerHome />} />
           <Route path='/aboutliver' element={<AboutLiver />} />
-          <Route path='/dataportal' element={<Data />}/>
-          
+          <Route path='/dataportal' element={<Data/>}/>
+
         </Routes>
       </>
     </Router>
