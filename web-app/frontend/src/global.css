@@ -7,4 +7,12 @@ body {
     /* add gradient effect */
    
   }
+
+  .body-dark{
+    background-color: #1e1e1e; /* Set your desired background color or image */
+  }
+  
+  .body-light{
+    background-color: #eee; /* Set your desired background color or image */
+  }
   

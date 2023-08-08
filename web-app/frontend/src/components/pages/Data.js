@@ -20,7 +20,7 @@ export default function Data(){
 
 
   return (
-    <div>
+    <div className='body-light'>
       <CancerHomeNavbar />
       
       <div className='spacer'> &nbsp;</div>

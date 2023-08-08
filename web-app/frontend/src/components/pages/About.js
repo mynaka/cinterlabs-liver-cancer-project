@@ -6,7 +6,7 @@ import './styles/About.css'; // Import the CSS file for About page styles
 function About() {
   return (
     <>
-    <div>
+    <div className ='body-dark'>
       <Navbar />
       <div className='spacer'></div>
       <div className='about-container'>

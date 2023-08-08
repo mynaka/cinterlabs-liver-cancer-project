@@ -10,7 +10,7 @@ export const NewsArticle = () => {
     const location = useLocation();
     const route = "/";
   return (
-    <div>
+    <div className='body-dark'>
         <Navbar />
         <div className='headSpace'></div>
         <div className='newsArticle'>

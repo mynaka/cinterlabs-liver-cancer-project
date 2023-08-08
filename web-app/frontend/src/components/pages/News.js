@@ -23,7 +23,7 @@ export default function News() {
  //console.log("newsData", newsData.body)
 
     return (
-      <div >
+      <div className='body-dark'>
         <Navbar />
         <div className='spacer'>
                 &nbsp;
