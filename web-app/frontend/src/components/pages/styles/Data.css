@@ -1,0 +1,121 @@
+.dataDictionaries,.mainData{
+    background-color: white;
+    min-height: 100vh;
+}
+
+.spacer{
+  height: 100px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .accordion:hover, .accordion-sub:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+
+  .space{
+    height:2px;
+  }
+
+
+  h1.data{
+   color:white; 
+  }
+  .accordion {
+    max-width: 1000px;
+    margin: 2rem auto;
+     font-family: 'Inter', sans-serif;
+  }
+  
+  .accordion-title,.accordion-title-sub {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    color: white;
+    opacity: 90%;
+  }
+
+  .accordion-title{
+    background-color: #7b1113 ;
+  }
+  
+  .accordion-title-sub{
+    background-color: #218041 ;
+    opacity: 80%;
+    border-radius:0.2cm;
+    
+  }
+  
+  .accordion-title:hover {
+    background-color: #744546 ;
+  }
+
+  .accordion-title-sub:hover{
+    background-color: #2f7a48 ;
+  }
+  
+  .accordion-title,
+  .accordion-title-sub,
+  .accordion-content {
+    padding: 1rem;
+  }
+
+
+  table {
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+    margin-left: auto;   
+    margin-right: auto;   
+  }
+
+  tr{
+    text-align: center;
+    
+  }
+  
+ .headSpace{
+  height:20px;
+ }
+  
+  td {
+      text-align: left;
+      
+      
+  }
+
+  tr:nth-child(even) {
+    background-color: #e2dbdb;
+  }
+  
+  
+  @media screen and (max-width: 700px) {
+    body {
+      font-size: 18px;
+    }
+  
+    .accordion,.accordion-sub {
+      width: 90%;
+    }
+  }

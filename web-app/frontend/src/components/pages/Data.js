@@ -1,5 +1,7 @@
 import React, {useEffect,useState}from 'react'
 import '../pages/styles/Data.css'
+import CancerHomeNavbar from '../CancerHomeNavbar'
+import DataDictionary from './DataDictionary';
 
 export default function Data(){
 
@@ -19,12 +21,17 @@ export default function Data(){
 
   return (
     <div>
-      <div classame ='spacer'>
-
-      </div>
-
-      <div className='dataDictionaries'>
-        
+      <CancerHomeNavbar />
+      
+      <div className='spacer'> &nbsp;</div>
+      <h1 className='accordion'>Data Dictionary</h1>
+      <div className='dataAccordion'>
+        {dataDictionaries.map((data,index) =>(
+          <DataDictionary 
+          key={index}
+          title={data.title}
+          subcateg={data.subcategory}/>
+        ))}
       </div>
     </div>
   )
