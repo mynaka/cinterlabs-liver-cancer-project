@@ -8,7 +8,7 @@ function About() {
     <>
     <div className ='body-dark'>
       <Navbar />
-      <div className='spacer'></div>
+      <div className='spaced'></div>
       <div className='about-container'>
         <div className='image-container'>
           <img src='images2/oble.png' alt='oblationart' className='oble' />

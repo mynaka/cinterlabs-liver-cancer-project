@@ -10,7 +10,7 @@ function Home() {
     <div>
       <Navbar/>
        <div className='home-container'>
-       <div className='space'></div>
+       <div className='spaced'></div>
       <HeroSection />
       <Cards />
       <Footer />

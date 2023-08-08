@@ -1,5 +1,7 @@
 /* Home.css */
-
+.spaced{
+  height: 50px;
+}
 .home-container {
     background-color: #000000; /* Set the background color to black */
     min-height: 100vh;
