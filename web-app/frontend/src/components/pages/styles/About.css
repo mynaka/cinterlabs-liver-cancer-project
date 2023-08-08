@@ -1,5 +1,7 @@
 /* About.css */
-
+body{
+  background-color: #1e1e1e; /* Set your desired background color or image */
+}
 .about-container {
     
     color: #ffffff;

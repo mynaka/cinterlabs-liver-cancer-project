@@ -24,7 +24,7 @@ export default function Data(){
       <CancerHomeNavbar />
       
       <div className='spacer'> &nbsp;</div>
-      <h1 className='accordion'>Data Dictionary</h1>
+      <h1 className='accordion'>Data Dictionary Table</h1>
       <div className='dataAccordion'>
         {dataDictionaries.map((data,index) =>(
           <DataDictionary 

@@ -148,17 +148,17 @@ email cannot be changed once account is created
 // (err,res)=> {console.log(res.body)})
 
 
-// needle.post("http://localhost:3001/Cinical/subcategory/add",
+// needle.post("http://localhost:3001/Clinical/subcategory/add",
 // {title: "Family",
 // desc: "Collection of all data related to the family members and their relationships."},
 // (err,res)=> {console.log(res.body)})
 
-// needle.post("http://localhost:3001/Cinical/subcategory/add",
+// needle.post("http://localhost:3001/Clinical/subcategory/add",
 // {title: "sample",
 // desc: "Biospecimen information that links subjects to samples including sample's provider, source, dbgap sample detail and so forth."},
 // (err,res)=> {console.log(res.body)})
 
-// needle.post("http://localhost:3001/Cinical/subcategory/add",
+// needle.post("http://localhost:3001/Clinical/subcategory/add",
 // {title: "subject",
 // desc: "Collection of some of the basics about a subject (e.g., characterization by age, sex, or race)."},
 // (err,res)=> {console.log(res.body)})
@@ -242,14 +242,163 @@ email cannot be changed once account is created
 // (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"description",
+// type: "string",
+// required: false,
+// description:"An account of the resource. Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."},
+// (err,res) => {console.log(res.body)})
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"format",
+// type: "string",
+// required: false,
+// description:"The file format, physical medium, or dimensions of the resource. Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME] (http://www.iana.org/assignments/media-types/)."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"language",
+// type: "string",
+// required: false,
+// description:"A language of the resource. Recommended best practice is to use a controlled vocabulary such as RFC 4646 (http://www.ietf.org/rfc/rfc4646.txt)."},
+// (err,res) => {console.log(res.body)})
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"publisher",
+// type: "string",
+// required: false,
+// description:"An entity responsible for making the resource available. Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"relation",
+// type: "string",
+// required: false,
+// description:"A related resource. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. "},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"rights",
+// type: "string",
+// required: false,
+// description:"Information about rights held in and over the resource. Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"source",
+// type: "string",
+// required: false,
+// description:"A related resource from which the described resource is derived. The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"subject",
+// type: "string",
+// required: false,
+// description:"The topic of the resource. Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+// {property:"title",
+// type: "string",
+// required: false,
+// description:"A name given to the resource. Typically, a Title will be a name by which the resource is formally known."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Program/property/add",
+// {property:"name",
+// type: "string",
+// required: true,
+// description:"Full name/title of the program."},
+// (err,res) => {console.log(res.body)})
+
+
+// needle.post("http://localhost:3001/Administrative/Program/property/add",
+// {property:"dbgap_accession_number",
+// type: "string",
+// required: true,
+// description:"The dbgap accession number provided for the program."},
+// (err,res) => {console.log(res.body)})
+
+// needle.post("http://localhost:3001/Administrative/Program/property/add",
+// {property:"type",
+// type: "string",
+// required: false,
+// },
+// (err,res) => {console.log(res.body)})
+
+
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"type",
+type: "string",
+required: true,},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"submitter_id",
+type: "string",
+required: true,
+description:"A project-specific identifier for a node. This property is the calling card/nickname/alias for a unit of submission. It can be used in place of the UUID for identifying or recalling a node."},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"projects",
+type: "array object",
+required: true,},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"contributor",
+type: "string",
+required: false,
+description:"An entity responsible for making contributions to the resource. Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity."},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"coverage",
+type: "string",
+required: false,
+description:"The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant. Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN] (http://www.getty.edu/research/tools/vocabulary/tgn/index.html). Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges."},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"creator",
+type: "string",
+required: false,
+description:"An entity primarily responsible for making the resource. Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity."},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"data_type",
+type: "string",
+required: false,
+description:"The nature or genre of the resource. Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element."},
+(err,res) => {console.log(res.body)})
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
+{property:"date",
+type: "string",
+required: false,
+description:"A combination of date and time of day in the form [-]CCYY-MM-DDThh:mm:ss[Z|(+|-)hh:mm]"},
+(err,res) => {console.log(res.body)})
+
+
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"description",
 type: "string",
 required: false,
 description:"An account of the resource. Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource."},
 (err,res) => {console.log(res.body)})
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"format",
 type: "string",
 required: false,
@@ -257,14 +406,14 @@ description:"The file format, physical medium, or dimensions of the resource. Ex
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"language",
 type: "string",
 required: false,
 description:"A language of the resource. Recommended best practice is to use a controlled vocabulary such as RFC 4646 (http://www.ietf.org/rfc/rfc4646.txt)."},
 (err,res) => {console.log(res.body)})
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"publisher",
 type: "string",
 required: false,
@@ -272,7 +421,7 @@ description:"An entity responsible for making the resource available. Examples o
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"relation",
 type: "string",
 required: false,
@@ -280,7 +429,7 @@ description:"A related resource. Recommended best practice is to identify the re
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"rights",
 type: "string",
 required: false,
@@ -288,7 +437,7 @@ description:"Information about rights held in and over the resource. Typically, 
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"source",
 type: "string",
 required: false,
@@ -296,7 +445,7 @@ description:"A related resource from which the described resource is derived. Th
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"subject",
 type: "string",
 required: false,
@@ -304,13 +453,12 @@ description:"The topic of the resource. Typically, the subject will be represent
 (err,res) => {console.log(res.body)})
 
 
-needle.post("http://localhost:3001/Administrative/Core Metadata Collection/property/add",
+needle.post("http://localhost:3001/Administrative/Project/property/add",
 {property:"title",
 type: "string",
 required: false,
 description:"A name given to the resource. Typically, a Title will be a name by which the resource is formally known."},
 (err,res) => {console.log(res.body)})
-
 
 
 //delete property
