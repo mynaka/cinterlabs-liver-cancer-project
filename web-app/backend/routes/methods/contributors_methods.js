@@ -9,24 +9,24 @@ exports.getContributors = (req,res) => {
 
 
 exports.fetchOne = (req,res) => {
-    Contributors.findOne({lname: req.body.lname, fname: req.body.fname, mname: req.body.mname})
+    Contributors.findOne({lname: req.params.lname, fname: req.params.fname, mname: req.params.mname})
                 .then(contrib => res.json(contrib))
                 .catch(err => res.status(400).json(err))
 }
 
 
 exports.removeContrib = (req,res) => {
-    Contributors.findOneAndDelete({lname: req.body.lname, fname: req.body.fname, mname: req.body.mname})
+    Contributors.findOneAndDelete({lname: req.params.lname, fname: req.params.fname, mname: req.params.mname})
                 .then(() => res.json("Removed a Contributor"))
                 .catch(err => res.status(400).json(err))
 }
 
 
 exports.editContrib = async (req, res) => {
-    var fname = req.body.fname
-    var lname = req.body.lname
-    var mname = req.body.mname
-    var desig = req.body.designation
+    var fname = req.params.fname
+    var lname = req.params.lname
+    var mname = req.params.mname
+    var desig = req.params.designation
 
 
     const duplicateContributor = await Contributors.duplicateContributor({fname: fname, lname: lname, mname: mname})
