@@ -42,5 +42,8 @@ module.exports = (app) =>{
     app.post("/:title/edit", research_controller.updateResearch)
     app.post("/:title/delete", research_controller.deleteResearch)
     app.post("/research/:title/verify", research_controller.verifyResearch)
-    //app.get("",contributor_controller.getContributors)
+    app.get("/contributors",contributor_controller.getContributors)
+    app.get("/contributors/:lname/:fname/:mname", news_controller.fetchOne)
+    app.post("/:lname/:fname/:mname/delete", contributor_controller.removeContrib)
+    app.post("/:lname/:fname/:mname/:desig/edit", contributor_controller.editContrib)
 }
