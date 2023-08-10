@@ -7,6 +7,7 @@ const researchSchema = new mongoose.Schema({
     content: {type: String, required: true},
     tags: {type: Array, "default": [], required: true},
     photo: {type: String},
+    category: [{type: String}],
     verified: {type: Boolean, "default":false}
 })
 
@@ -15,6 +16,7 @@ const contributorsSchema = new mongoose.Schema({
     mname: {type: String, required: true},
     lname: {type: String, required: true},
     designation: {type: String, requied: true},
+    affiliation: [{type: String}],
     contribution: [{type: researchSchema}]
 })
 

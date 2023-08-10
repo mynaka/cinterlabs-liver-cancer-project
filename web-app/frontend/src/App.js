@@ -12,6 +12,7 @@ import CancerHome from './components/pages/CancerHome';
 import AboutLiver from './components/pages/AboutLiver';
 import { NewsArticle } from './components/pages/NewsArticle';
 import Data from './components/pages/Data';
+import CancerResearch from './components/pages/CancerResearch';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/cancerhome' element={<CancerHome />} />
           <Route path='/aboutliver' element={<AboutLiver />} />
           <Route path='/dataportal' element={<Data/>}/>
+          <Route path ='/cancerresearch' element ={<CancerResearch />}/>
 
         </Routes>
       </>
