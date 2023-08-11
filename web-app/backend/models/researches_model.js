@@ -15,7 +15,7 @@ const contributorsSchema = new mongoose.Schema({
     fname: {type: String, required : true},
     mname: {type: String, required: true},
     lname: {type: String, required: true},
-    designation: {type: String, requied: true},
+    designation: {type: String},
     affiliation: [{type: String}],
     contribution: [{type: researchSchema}]
 })

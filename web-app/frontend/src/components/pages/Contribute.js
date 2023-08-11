@@ -16,7 +16,7 @@ export default function Contribute() {
   ]
 
   return (
-    <section class ='section-white'>
+    <div class ='body-dark'>
       <Navbar />
       <div className='spacer'> &nbsp;</div>
       <div class='container'>
@@ -34,6 +34,6 @@ export default function Contribute() {
       
       
 
-    </section>
+    </div>
   );
 }
