@@ -15,7 +15,6 @@ import Data from './components/pages/Data';
 import CancerResearch from './components/pages/CancerResearch';
 import { Research } from './components/pages/Research';
 
-
 function App() {
   return (
     <Router>
@@ -33,7 +32,7 @@ function App() {
           <Route path='/dataportal' element={<Data/>}/>
           <Route path ='/cancerresearch' element ={<CancerResearch />}/>
           <Route path ='/research' element = {<Research />}/>
-          <Route path ='contribute' element ={<Contribute />}/>
+          <Route path ='/contribute' element ={<Contribute />}/>
 
         </Routes>
       </>
