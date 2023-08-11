@@ -8,6 +8,7 @@ const contributor_controller = require("./methods/contributors_methods")
 
 
 module.exports = (app) =>{
+    app.get("/contributors", contributor_controller.getContributors)
     app.get("/news", news_controller.getNews)
     app.post("/news/add", news_controller.addNews)
     app.get("/news/:id", news_controller.fetchOne)
@@ -35,14 +36,13 @@ module.exports = (app) =>{
     app.post("/:categ/:subcateg/property/addMany", property_controller.addPropertyMany)
     app.post("/:categ/:subcateg/:prop/delete", property_controller.deleteProperty)
     app.post("/:categ/:subcateg/:prop/edit", property_controller.updateProperty)
-    app.get("/research", research_controller.getResearches )
+    app.get("/research", research_controller.getResearches)
     app.get("/pending", research_controller.pendingResearches)
     app.get("/:title", research_controller.fetchOne)
     app.post("/research/submit", research_controller.addReserach)
     app.post("/:title/edit", research_controller.updateResearch)
     app.post("/:title/delete", research_controller.deleteResearch)
     app.post("/research/:title/verify", research_controller.verifyResearch)
-    app.get("/contributors",contributor_controller.getContributors)
     app.get("/contributors/:lname/:fname/:mname", news_controller.fetchOne)
     app.post("/:lname/:fname/:mname/delete", contributor_controller.removeContrib)
     app.post("/:lname/:fname/:mname/:desig/edit", contributor_controller.editContrib)
