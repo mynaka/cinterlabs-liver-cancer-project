@@ -84,8 +84,13 @@ function Navbar() {
                         </Link>
                       </li>
                       <li className='dropdown-item'>
-                        <Link to='/research/topic2' className='nav-links' onClick={closeMobileMenu}>
-                          Topic 2
+                        <Link to='/research/publications' className='nav-links' onClick={closeMobileMenu}>
+                          Publications
+                        </Link>
+                      </li>
+                      <li className='dropdown-item'>
+                        <Link to='/research/projects' className='nav-links' onClick={closeMobileMenu}>
+                          Projects
                         </Link>
                       </li>
                       {/* Add more dropdown menu items here if needed */}

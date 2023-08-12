@@ -74,19 +74,21 @@ export const Research = () => {
       <p className='shortdescresearch'>Computational Interdisciplinary Research Laboratories (CINTERLabs) is UPLB's arm in strengthening research in computational arts, data science, automation and robotics for the enhancement and application of agriculture and environmental monitoring. Armed with the goal for excellence and research advancement, our institution helps ensure that our research capacity is able to compete with other Asian universities. </p>  {/*ref : https://ovcre.uplb.edu.ph/press/features/item/537-what-s-with-all-of-these-centers*/}
     
     </div>
+    
     <div className='bullet-list'>
+    <h1>Fields of Study</h1>
         <div className='container'>
+        
           <div className='list-column'>
             
             <ul>
               <li><a href='http://localhost:3000/cancerhome'>Liver Cancer Research</a></li>
               <li><a href='#'>Data Science</a></li>
               <li><a href='#'>Automation</a></li>
-            </ul>
-          </div>
-          <div className='list-column'>
             
-            <ul>
+          
+            
+            
               <li><a href='#'>Robotics</a></li>
               <li><a href='#'>Agriculture</a></li>
               <li><a href='#'>Environmental</a></li>

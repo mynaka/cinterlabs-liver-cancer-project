@@ -79,7 +79,7 @@
 
   .oble2{
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8) ),url('../../../../public/images2/oble2.png') center center/cover no-repeat;
-    height:50vh;
+    height: 75vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -116,6 +116,7 @@
     justify-content: center;
     align-items: center;
     
+    
   }
   
   .container {
@@ -135,10 +136,12 @@
   
 
   
-  .list-column ul {
+  ul {
     list-style: disc;
     margin-left: 1rem;
     color: rgb(142, 21, 55);
+    column-count: 2;
+    column-gap: 100px;
   }
   
   .list-column li {
