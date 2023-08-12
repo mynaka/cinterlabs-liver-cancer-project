@@ -1,0 +1,96 @@
+/* NewsCardsHome.css */
+.spacerHome {
+    height: 50px;
+}
+
+.NewsCardsHome {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 5rem;
+}
+
+.newsCardHome {
+    position: relative;
+    background-color: #ffffff;
+    margin: 1rem;
+    flex: 1 0 calc(33.33% - 2rem); /* Distribute space equally for 3 columns with margins */
+    max-width: 30rem;
+    max-height: 50rem;
+    transition: 0.2s;
+    border: 2px solid transparent; /* Add a transparent border */
+}
+
+.newsCardHome:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0.5rem 0.75rem 1.5rem #7b1113;
+    border: 2px solid #7b1113; /* Add colored border on hover */
+}
+
+.newsImgHome {
+    margin-top: 2rem;
+    max-width: 100%;
+    height: auto;
+}
+
+.newsCardContentHome {
+    margin: 2rem;
+}
+
+.newsTitleHome {
+    font-size: 1.5rem;
+    color: #7b1113;
+}
+
+.btnHome {
+    float: left;
+}
+
+.stackHome,
+.tagsStackHome {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.tagsStackHome {
+    bottom: 0;
+}
+
+.newsAuthorHome {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.newsTagsHome {
+    font-size: 1.1rem;
+}
+
+ul.tagHome {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+}
+
+li.tagsHome {
+    float: left;
+}
+
+.headSpaceHome {
+    height: 150px;
+}
+
+.newsArticleHome {
+    color: white;
+}
+
+.articleImgHome {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

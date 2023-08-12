@@ -3,7 +3,26 @@
   height: 50px;
 }
 .home-container {
-    background-color: #000000; /* Set the background color to black */
+    background-color: #ffffff; /* Set the background color to black */
     min-height: 100vh;
   }
-  
+  h1 {
+    text-align: left;
+    margin-left: 450px;
+    font-family: 'Inter', sans-serif;
+  }
+
+
+.recentUpdates {
+  display: flex;
+  align-items: center;
+  color: #7b1113;
+}
+
+.recentUpdates::after {
+  content: "";
+  width: 100px; /* Adjust the width as needed */
+  height: 5px;
+  background-color: #7b1113;
+  margin-left: 1rem;
+}
