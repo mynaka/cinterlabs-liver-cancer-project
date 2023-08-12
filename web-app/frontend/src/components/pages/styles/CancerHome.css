@@ -3,3 +3,17 @@
     height: auto; /* Adjust the height as needed */
   }
   
+
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add margin to separate video from previous content */
+    margin-bottom: 20px;
+  }
+  
+  /* Style the video itself */
+  .video-container video {
+    max-width: 100%;
+    height: auto;
+  }

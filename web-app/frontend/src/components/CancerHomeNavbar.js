@@ -46,7 +46,7 @@ Home
           </li>
           {/* Add more menu items as needed */}
         </ul>
-        {Button && <Button buttonStyle='btn--secondary' >Contact Us</Button>}
+       
         <div className='spacer'></div>
         {Button && <Button buttonStyle='btn--secondary' >Log in</Button>}
       </div>
