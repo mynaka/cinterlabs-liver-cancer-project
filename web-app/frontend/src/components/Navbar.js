@@ -102,6 +102,11 @@ function Navbar() {
                     Contribute
                   </Link>
                 </li>
+                <li className='nav-item'>
+                  <Link to='/contactus' className='nav-links' onClick={closeMobileMenu}>
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
             {button && <Button linkTo='/login' buttonStyle='btn--outline'>Log-in</Button>}
