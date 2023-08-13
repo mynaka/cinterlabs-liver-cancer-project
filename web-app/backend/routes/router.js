@@ -5,9 +5,10 @@ const subcateg_controller = require("./methods/subcategories_methods")
 const property_controller = require("./methods/properties_methods")
 const research_controller = require("./methods/researches_methods")
 const contributor_controller = require("./methods/contributors_methods")
-
+const project_controller = require("./methods/projects_methods")
 
 module.exports = (app) =>{
+    app.get("/projects", project_controller.getProjects)
     app.get("/contributors", contributor_controller.getContributors)
     app.get("/news", news_controller.getNews)
     app.post("/news/add", news_controller.addNews)
@@ -46,4 +47,5 @@ module.exports = (app) =>{
     app.get("/contributors/:lname/:fname/:mname", news_controller.fetchOne)
     app.post("/:lname/:fname/:mname/delete", contributor_controller.removeContrib)
     app.post("/:lname/:fname/:mname/:desig/edit", contributor_controller.editContrib)
+    
 }
