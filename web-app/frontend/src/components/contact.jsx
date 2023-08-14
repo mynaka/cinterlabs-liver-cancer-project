@@ -7,9 +7,7 @@ import {
     
     FaEnvelope,
     FaGoogle,
-    FaCodepen,
-    FaTwitter,
-    FaInstagram
+    
   } from 'react-icons/fa';
 const ErrorMessage = styled.div`
   color: red;
