@@ -14,6 +14,7 @@ import { NewsArticle } from './components/pages/NewsArticle';
 import Data from './components/pages/Data';
 import CancerResearch from './components/pages/CancerResearch';
 import { Research } from './components/pages/Research';
+import ContactUs from './components/pages/ContactUs';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
           <Route path ='/cancerresearch' element ={<CancerResearch />}/>
           <Route path ='/research' element = {<Research />}/>
           <Route path ='/contribute' element ={<Contribute />}/>
+          <Route path ='/contactus' element={<ContactUs />}/>
+          
 
         </Routes>
       </>
