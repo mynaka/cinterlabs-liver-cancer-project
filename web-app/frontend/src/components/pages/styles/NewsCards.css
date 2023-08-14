@@ -16,13 +16,14 @@
     margin-top: 2rem; /* Adjust the margin as needed */
 }
 
+/* Temporary fix: turned max-width and max-heigjt tp fixed width and height  */
 .newsCard {
     position: relative;
     background-color: #ffffff; /* White background */
     margin: 1rem; /* Increase the margin for more spacing */
     flex: 1 0 calc(33.333% - 2rem); /* Adjust the width of each card */
-    max-width: 50rem; /* Increase the maximum width */
-    max-height: 70rem; /* Increase the maximum height */
+    width: 50rem; /* Increase the maximum width */
+    height: 50rem; /* Increase the maximum height */
     transition: 0.2s;
     padding: 1rem; /* Add padding to create spacing between cards */
     box-sizing: border-box; /* Include padding in width calculation */
